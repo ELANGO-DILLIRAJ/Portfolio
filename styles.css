@@ -409,6 +409,14 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--gradient-mixed);
   position: relative;
   animation: profileGlow 4s ease-in-out infinite alternate;
+  overflow: hidden;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  cursor: pointer;
+}
+
+.profile-frame:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 0 40px rgba(0, 242, 254, 0.35), 0 0 80px rgba(127, 0, 255, 0.2);
 }
 
 .profile-frame img {
@@ -417,6 +425,11 @@ h1, h2, h3, h4, h5, h6 {
   object-fit: cover;
   border-radius: calc(var(--radius-xl) - 2px);
   border: 4px solid var(--bg-primary);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.profile-frame:hover img {
+  transform: scale(1.08);
 }
 
 @keyframes profileGlow {

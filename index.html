@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Elango Dilliraj — B.Tech AI & Data Science student passionate about programming, AI tools, and building intelligent applications." />
+  <title>Elango Dilliraj | Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Particle Background -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Spotlight@Elango</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="tech-skills.html">Technical Skills</a></li>
+        <li><a href="soft-skills.html">Soft Skills</a></li>
+        <li><a href="certifications-projects.html">Projects</a></li>
+        <li><a href="interests.html">Interests</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-content">
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <p class="hero-greeting">// Hello, World!</p>
+          <h1 class="hero-name">
+            I'm <span class="gradient-text">Elango Dilliraj</span>
+          </h1>
+          <p class="hero-role">B.Tech — Artificial Intelligence & Data Science</p>
+          <div class="hero-contact-row">
+            <span>📍 Chennai, Tamil Nadu</span>
+            <a href="mailto:n.d.elango2007@gmail.com">✉ n.d.elango2007@gmail.com</a>
+            <a href="https://www.linkedin.com/in/elangodilliraj" target="_blank" rel="noopener">🔗 LinkedIn</a>
+          </div>
+          <p class="hero-tagline">
+            <span id="typing-text"></span><span class="cursor"></span>
+          </p>
+          <div class="hero-cta">
+            <a href="tech-skills.html" class="btn btn-primary">Explore My Skills</a>
+            <a href="#connect" class="btn btn-outline">Get in Touch</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="profile-frame">
+            <img src="assets/profile.jpg" alt="Elango Dilliraj — Profile Photo" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BRIEF INTRO ===== -->
+    <section class="intro-section reveal">
+      <p class="section-label" style="justify-content: center;">About Me & This Site</p>
+      <h2 class="section-title" style="text-align: center;">Welcome to My Spotlight</h2>
+      <p class="intro-text">
+        Hi, I'm <span class="highlight">Elango Dilliraj</span> — a second-year B.Tech student specializing in 
+        <span class="highlight">Artificial Intelligence & Data Science</span> at J.N.N Institute of Engineering, Chennai. 
+        I'm deeply passionate about programming, exploring the frontiers of Generative AI, and turning ideas into 
+        intelligent solutions. This portfolio is my digital stage — a curated showcase of my 
+        <span class="highlight">academic journey</span>, <span class="highlight">technical expertise</span>, 
+        <span class="highlight">projects</span>, <span class="highlight">certifications</span>, and the interests 
+        that shape who I am beyond the code. Take a look around and feel free to connect!
+      </p>
+    </section>
+
+    <!-- ===== ACADEMIC TIMELINE ===== -->
+    <section class="section reveal" id="timeline">
+      <p class="section-label">Academic Journey</p>
+      <h2 class="section-title">Education & Milestones</h2>
+      <p class="section-subtitle">Tracking my growth through academics, achievements, and hands-on exploration in AI and technology.</p>
+
+      <div class="timeline">
+        <!-- Current Degree -->
+        <div class="timeline-item">
+          <span class="timeline-year">2025 — 2029</span>
+          <h3 class="timeline-title">Bachelor of Technology — AI & Data Science</h3>
+          <p class="timeline-institution">J.N.N Institute of Engineering, Chennai</p>
+          <ul class="timeline-highlights">
+            <li>9.56 GPA — 1st Semester</li>
+            <li>Google Ambassador Programme Finalist</li>
+            <li>Youth Talk Participant</li>
+            <li>College Class Representative</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CERTIFICATIONS PREVIEW ===== -->
+    <section class="section reveal" id="certifications">
+      <p class="section-label">Credentials</p>
+      <h2 class="section-title">Certifications</h2>
+      <p class="section-subtitle">Professional credentials that validate my skills in Generative AI, prompt engineering, and data strategies.</p>
+
+      <div class="cert-preview-grid">
+
+        <div class="cert-preview-card">
+          <img src="assets/certificates/udemy-genai.jpg" alt="Gen AI To Unlock Full Data Value — Udemy" />
+          <div class="cert-preview-info">
+            <h4>Gen AI To Unlock Full Data Value</h4>
+            <p>Mastering GenAI-driven data extraction, synthesis, and analytics strategies.</p>
+            <span class="cert-org">Udemy · Minerva Singh · May 2026</span>
+          </div>
+        </div>
+
+        <div class="cert-preview-card">
+          <img src="assets/certificates/simplilearn-copilot.jpg" alt="Prompt Engineering with GitHub Copilot — Simplilearn" />
+          <div class="cert-preview-info">
+            <h4>Intro to Prompt Engineering with GitHub Copilot</h4>
+            <p>AI-assisted pair programming and advanced prompt crafting for software builds.</p>
+            <span class="cert-org">Simplilearn SkillUp · Microsoft · May 2026</span>
+          </div>
+        </div>
+
+        <div class="cert-preview-card">
+          <img src="assets/certificates/guvi-chatgpt.png" alt="ChatGPT for Everyone — GUVI" />
+          <div class="cert-preview-info">
+            <h4>ChatGPT for Everyone</h4>
+            <p>Fundamentals of conversational AI, workflow automation, and custom configurations.</p>
+            <span class="cert-org">GUVI · HCL · Google for Education · May 2026</span>
+          </div>
+        </div>
+
+        <div class="cert-preview-card">
+          <img src="assets/certificates/simplilearn-adv-genai.png" alt="Introduction to Advanced Gen AI Tools — Simplilearn" />
+          <div class="cert-preview-info">
+            <h4>Introduction to Advanced Gen AI Tools</h4>
+            <p>Evaluating and utilizing frontier generative AI applications across domains.</p>
+            <span class="cert-org">Simplilearn SkillUp · June 2026</span>
+          </div>
+        </div>
+
+        <div class="cert-preview-card">
+          <img src="assets/certificates/google-cloud-genai.png" alt="Introduction to Generative AI — Google Cloud" />
+          <div class="cert-preview-info">
+            <h4>Introduction to Generative AI</h4>
+            <p>Foundational understanding of LLMs, generative models, and Google Cloud AI.</p>
+            <span class="cert-org">Google Cloud · Completion Badge</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="cert-view-all">
+        <a href="certifications-projects.html" class="btn btn-outline">View Takeaways & Projects →</a>
+      </div>
+    </section>
+
+    <!-- ===== CONNECT ===== -->
+    <section class="connect-section reveal" id="connect">
+      <p class="section-label">Let's Connect</p>
+      <h2 class="section-title">Get in Touch</h2>
+      <p class="section-subtitle" style="margin: 0 auto 1rem;">Have a question, an idea, or just want to say hello? Drop me a message below.</p>
+
+      <form class="connect-form" id="connect-form">
+        <div class="form-group">
+          <label for="form-name">Your Name</label>
+          <input type="text" id="form-name" placeholder="e.g. John Doe" required />
+        </div>
+        <div class="form-group">
+          <label for="form-email">Your Email</label>
+          <input type="email" id="form-email" placeholder="e.g. john@example.com" required />
+        </div>
+        <div class="form-group">
+          <label for="form-message">Message</label>
+          <textarea id="form-message" placeholder="Write your message here..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="align-self: center;">Send Message</button>
+      </form>
+      <div id="form-status" class="form-status"></div>
+
+      <div class="connect-socials">
+        <a href="mailto:n.d.elango2007@gmail.com" class="social-link" title="Email">✉</a>
+        <a href="https://www.linkedin.com/in/elangodilliraj" target="_blank" rel="noopener" class="social-link" title="LinkedIn">in</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2026 Elango Dilliraj. Crafted with passion & code.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

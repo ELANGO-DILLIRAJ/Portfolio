@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Technical Skills — Elango Dilliraj's expertise in AI tools, mathematics foundations, and programming languages." />
+  <title>Technical Skills | Elango Dilliraj</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Spotlight@Elango</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tech-skills.html">Technical Skills</a></li>
+        <li><a href="soft-skills.html">Soft Skills</a></li>
+        <li><a href="certifications-projects.html">Projects</a></li>
+        <li><a href="interests.html">Interests</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <section class="section">
+      <p class="section-label">Capabilities</p>
+      <h1 class="section-title">Technical Skills</h1>
+      <p class="section-subtitle">A categorized breakdown of my technical toolkit, ranging from AI proficiency to mathematical foundations and programming mastery.</p>
+
+      <div class="skills-categories">
+
+        <!-- AI Category -->
+        <div class="skill-category reveal">
+          <div class="category-header">
+            <div class="category-icon ai">🤖</div>
+            <div>
+              <h3>Artificial Intelligence</h3>
+              <p>Leveraging frontier GenAI tools for data synthesis, prompt engineering, and intelligent automation.</p>
+            </div>
+          </div>
+          <div class="skills-grid">
+            <div class="skill-card">
+              <div class="skill-label">
+                <h4>AI Tools Expertise</h4>
+                <span class="skill-percent">90%</span>
+              </div>
+              <p style="font-size:0.82rem; color: var(--text-muted); margin-bottom: 0.6rem;">Hands-on experience with ChatGPT, Gemini, Copilot, and emerging GenAI platforms.</p>
+              <div class="skill-bar"><div class="skill-bar-fill purple" data-percent="90"></div></div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-label">
+                <h4>Google Gemini</h4>
+                <span class="skill-percent">85%</span>
+              </div>
+              <p style="font-size:0.82rem; color: var(--text-muted); margin-bottom: 0.6rem;">Advanced prompting for content generation, screenplay writing, and creative AI workflows.</p>
+              <div class="skill-bar"><div class="skill-bar-fill purple" data-percent="85"></div></div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-label">
+                <h4>Antigravity IDE</h4>
+                <span class="skill-percent">80%</span>
+              </div>
+              <p style="font-size:0.82rem; color: var(--text-muted); margin-bottom: 0.6rem;">AI-powered development environment for rapid prototyping and intelligent coding assistance.</p>
+              <div class="skill-bar"><div class="skill-bar-fill purple" data-percent="80"></div></div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-label">
+                <h4>Prompt Engineering</h4>
+                <span class="skill-percent">85%</span>
+              </div>
+              <p style="font-size:0.82rem; color: var(--text-muted); margin-bottom: 0.6rem;">Certified in crafting high-quality prompts for maximum AI output accuracy and creativity.</p>
+              <div class="skill-bar"><div class="skill-bar-fill purple" data-percent="85"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mathematics Category -->
+        <div class="skill-category reveal">
+          <div class="category-header">
+            <div class="category-icon math">📐</div>
+            <div>
+              <h3>Mathematics</h3>
+              <p>Strong quantitative foundation powering AI & Data Science problem solving.</p>
+            </div>
+          </div>
+          <div class="skills-grid">
+            <div class="skill-card">
+              <div class="skill-label">
+                <h4>Linear Algebra</h4>
+                <span class="skill-percent">80%</span>
+              </div>
+              <p style="font-size:0.82rem; color: var(--text-muted); margin-bottom: 0.6rem;">Vectors, matrices, eigenvalues — the backbone of machine learning algorithms.</p>
+              <div class="skill-bar"><div class="skill-bar-fill" data-percent="80"></div></div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-label">
+                <h4>Probability & Statistics</h4>
+                <span class="skill-percent">75%</span>
+              </div>
+              <p style="font-size:0.82rem; color: var(--text-muted); margin-bottom: 0.6rem;">Distributions, hypothesis testing, and Bayesian reasoning for data-driven decisions.</p>
+              <div class="skill-bar"><div class="skill-bar-fill" data-percent="75"></div></div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-label">
+                <h4>Calculus</h4>
+                <span class="skill-percent">75%</span>
+              </div>
+              <p style="font-size:0.82rem; color: var(--text-muted); margin-bottom: 0.6rem;">Differentiation and integration applied to optimization and gradient descent.</p>
+              <div class="skill-bar"><div class="skill-bar-fill" data-percent="75"></div></div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-label">
+                <h4>Optimization</h4>
+                <span class="skill-percent">70%</span>
+              </div>
+              <p style="font-size:0.82rem; color: var(--text-muted); margin-bottom: 0.6rem;">Convex optimization, gradient methods, and loss function minimization for ML models.</p>
+              <div class="skill-bar"><div class="skill-bar-fill" data-percent="70"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Programming Category -->
+        <div class="skill-category reveal">
+          <div class="category-header">
+            <div class="category-icon prog">💻</div>
+            <div>
+              <h3>Programming</h3>
+              <p>Languages, frontend technologies, and developer tools for building real-world applications.</p>
+            </div>
+          </div>
+          <div class="skills-grid">
+            <div class="skill-card">
+              <div class="skill-label">
+                <h4>C</h4>
+                <span class="skill-percent">80%</span>
+              </div>
+              <p style="font-size:0.82rem; color: var(--text-muted); margin-bottom: 0.6rem;">Systems-level programming, memory management, and algorithm implementation.</p>
+              <div class="skill-bar"><div class="skill-bar-fill green" data-percent="80"></div></div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-label">
+                <h4>C++</h4>
+                <span class="skill-percent">75%</span>
+              </div>
+              <p style="font-size:0.82rem; color: var(--text-muted); margin-bottom: 0.6rem;">Object-oriented design, STL, and competitive programming fundamentals.</p>
+              <div class="skill-bar"><div class="skill-bar-fill green" data-percent="75"></div></div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-label">
+                <h4>Python</h4>
+                <span class="skill-percent">85%</span>
+              </div>
+              <p style="font-size:0.82rem; color: var(--text-muted); margin-bottom: 0.6rem;">Scripting, data analysis, automation, and AI/ML prototyping.</p>
+              <div class="skill-bar"><div class="skill-bar-fill green" data-percent="85"></div></div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-label">
+                <h4>HTML / CSS / JavaScript</h4>
+                <span class="skill-percent">80%</span>
+              </div>
+              <p style="font-size:0.82rem; color: var(--text-muted); margin-bottom: 0.6rem;">Responsive web design, interactive UI development, and modern frontend practices.</p>
+              <div class="skill-bar"><div class="skill-bar-fill green" data-percent="80"></div></div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-label">
+                <h4>GitHub</h4>
+                <span class="skill-percent">75%</span>
+              </div>
+              <p style="font-size:0.82rem; color: var(--text-muted); margin-bottom: 0.6rem;">Version control, collaboration, branching strategies, and open-source workflows.</p>
+              <div class="skill-bar"><div class="skill-bar-fill green" data-percent="75"></div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Elango Dilliraj. Crafted with passion & code.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

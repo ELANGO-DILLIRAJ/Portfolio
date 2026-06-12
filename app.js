@@ -218,6 +218,19 @@
 })();
 
 
+// ---- Skill Card Expand/Collapse ----
+(function () {
+  const skillCards = document.querySelectorAll('.skill-card[data-expandable]');
+  if (skillCards.length === 0) return;
+
+  skillCards.forEach(card => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('expanded');
+    });
+  });
+})();
+
+
 // ---- Active Nav Link ----
 (function () {
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';

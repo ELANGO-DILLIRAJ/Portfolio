@@ -804,10 +804,67 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 1;
 }
 
+.skill-card {
+  cursor: pointer;
+}
+
 .skill-card h4 {
   font-size: 1rem;
   font-weight: 600;
   margin-bottom: 0.8rem;
+}
+
+/* Expandable Skill Details */
+.skill-detail {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1), margin 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  margin-top: 0;
+}
+
+.skill-card.expanded .skill-detail {
+  max-height: 500px;
+  opacity: 1;
+  margin-top: 1rem;
+}
+
+.skill-detail-inner {
+  border-top: 1px solid var(--border-glass);
+  padding-top: 0.8rem;
+}
+
+.skill-detail-inner p {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 0.5rem;
+}
+
+.skill-detail-inner p strong {
+  color: var(--accent-cyan);
+  font-weight: 600;
+}
+
+.skill-detail-inner p.purple strong {
+  color: var(--accent-purple);
+}
+
+.skill-card .expand-hint {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  margin-top: 0.6rem;
+  transition: color var(--transition-fast);
+}
+
+.skill-card.expanded .expand-hint {
+  color: var(--accent-cyan);
+}
+
+.skill-card.expanded {
+  border-color: rgba(0, 242, 254, 0.2);
+  background: var(--bg-card-hover);
 }
 
 .skill-bar {

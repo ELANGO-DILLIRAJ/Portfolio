@@ -271,3 +271,84 @@
     }, 5000);
   });
 })();
+
+
+// ---- Certification Card Expand/Collapse ----
+(function () {
+  const certCards = document.querySelectorAll('.cert-expand-card[data-expandable]');
+  if (certCards.length === 0) return;
+
+  certCards.forEach(card => {
+    const header = card.querySelector('.cert-expand-header');
+    if (!header) return;
+
+    header.addEventListener('click', (e) => {
+      // Don't toggle if clicking the lightbox trigger image inside expanded body
+      if (e.target.closest('.cert-expand-body')) return;
+
+      // Close other cards (accordion behavior)
+      certCards.forEach(other => {
+        if (other !== card && other.classList.contains('expanded')) {
+          other.classList.remove('expanded');
+        }
+      });
+
+      card.classList.toggle('expanded');
+    });
+  });
+})();
+
+
+// ---- Certificate Lightbox (Fullscreen View) ----
+(function () {
+  const lightbox = document.getElementById('cert-lightbox');
+  const lightboxImg = document.getElementById('cert-lightbox-img');
+  const lightboxClose = document.getElementById('cert-lightbox-close');
+  if (!lightbox || !lightboxImg) return;
+
+  // Open lightbox when clicking expanded cert images
+  document.addEventListener('click', (e) => {
+    const trigger = e.target.closest('.cert-lightbox-trigger');
+    if (!trigger) return;
+
+    e.preventDefault();
+    e.stopPropagation();
+
+    lightboxImg.src = trigger.src;
+    lightboxImg.alt = trigger.alt;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+
+  // Close lightbox
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+    // Clear src after transition
+    setTimeout(() => {
+      if (!lightbox.classList.contains('active')) {
+        lightboxImg.src = '';
+      }
+    }, 400);
+  }
+
+  if (lightboxClose) {
+    lightboxClose.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeLightbox();
+    });
+  }
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox || e.target === lightboxImg) {
+      closeLightbox();
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+      closeLightbox();
+    }
+  });
+})();

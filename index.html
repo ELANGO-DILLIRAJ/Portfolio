@@ -194,18 +194,18 @@
       <p class="section-subtitle" style="margin: 0 auto 1rem;">Have a question, an idea, or just want to say hello? Drop
         me a message below.</p>
 
-      <form class="connect-form" id="connect-form">
+      <form class="connect-form" id="connect-form" name="contact" method="POST" data-netlify="true">
         <div class="form-group">
           <label for="form-name">Your Name *</label>
-          <input type="text" id="form-name" placeholder="Enter your Name" required />
+          <input type="text" id="form-name" name="name" placeholder="Enter your Name" required />
         </div>
         <div class="form-group">
           <label for="form-email">Your Email *</label>
-          <input type="email" id="form-email" placeholder="Enter your Mail ID " required />
+          <input type="email" id="form-email" name="email" placeholder="Enter your Mail ID " required />
         </div>
         <div class="form-group">
           <label for="form-message">Message *</label>
-          <textarea id="form-message" placeholder="Hey Elango! I'd love to collaborate with you on ... "
+          <textarea id="form-message" name="message" placeholder="Hey Elango! I'd love to collaborate with you on ... "
             required></textarea>
         </div>
         <button type="submit" class="btn btn-primary" style="align-self: center;">Send Message</button>

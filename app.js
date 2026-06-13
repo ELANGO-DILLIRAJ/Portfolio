@@ -260,15 +260,43 @@
     if (!name || !email || !message) return;
 
     const status = document.getElementById('form-status');
-    status.textContent = `Thank you, ${name}! Your message has been received. I'll get back to you soon.`;
-    status.className = 'form-status success';
+    const formData = new FormData(form);
+    formData.append('form-name', form.getAttribute('name') || 'contact');
 
-    form.reset();
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString()
+    })
+    .then(response => {
+      status.style.display = 'block';
+      status.style.background = '';
+      status.style.color = '';
+      status.style.border = '';
+      status.textContent = `Thank you, ${name}! Your message has been received. I'll get back to you soon.`;
+      status.className = 'form-status success';
 
-    setTimeout(() => {
+      form.reset();
+
+      setTimeout(() => {
+        status.className = 'form-status';
+        status.style.display = 'none';
+      }, 5000);
+    })
+    .catch(error => {
+      console.error('Form submission error:', error);
+      status.style.display = 'block';
+      status.textContent = `Oops! There was a problem submitting your message. Please try again.`;
       status.className = 'form-status';
-      status.style.display = 'none';
-    }, 5000);
+      status.style.background = 'rgba(255, 82, 82, 0.1)';
+      status.style.color = '#ff5252';
+      status.style.border = '1px solid rgba(255, 82, 82, 0.2)';
+
+      setTimeout(() => {
+        status.className = 'form-status';
+        status.style.display = 'none';
+      }, 5000);
+    });
   });
 })();
 

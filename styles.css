@@ -57,25 +57,27 @@ html {
   scroll-behavior: smooth;
   font-size: 16px;
   scrollbar-width: thin;
-  scrollbar-color: rgba(148, 163, 184, 0.25) transparent;
+  scrollbar-color: rgba(0, 242, 254, 0.15) rgba(8, 12, 20, 0.5);
 }
 
 /* Webkit Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: rgba(8, 12, 20, 0.5);
+  border-left: 1px solid var(--border-glass);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(148, 163, 184, 0.25);
-  border-radius: 3px;
+  background: rgba(0, 242, 254, 0.15);
+  border-radius: 4px;
+  border: 2px solid rgba(8, 12, 20, 0.5);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(148, 163, 184, 0.45);
+  background: rgba(0, 242, 254, 0.35);
 }
 
 body {

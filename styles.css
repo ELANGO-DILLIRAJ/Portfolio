@@ -1468,6 +1468,58 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--accent-cyan);
 }
 
+/* Page Bottom Actions (Sub-pages) */
+.page-bottom-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  padding: 2rem 0;
+  border-top: 1px dashed var(--border-glass);
+}
+
+/* Scroll to Top Button */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-full);
+  background: rgba(13, 19, 33, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border-glass);
+  color: var(--accent-cyan);
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(15px);
+  z-index: 999;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-top-btn.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.scroll-top-btn:hover {
+  background: var(--accent-cyan);
+  color: var(--bg-primary);
+  border-color: var(--accent-cyan);
+  box-shadow: var(--shadow-glow-cyan);
+  transform: translateY(-3px);
+}
+
 /* ============================
    SCROLL REVEAL
    ============================ */

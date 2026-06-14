@@ -233,13 +233,21 @@
 
 // ---- Active Nav Link ----
 (function () {
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const pathSegment = window.location.pathname.split('/').pop() || 'index.html';
+  const currentPage = pathSegment.replace(/\.html$/, '') || 'index';
   const navLinks = document.querySelectorAll('.nav-links a');
 
   navLinks.forEach(link => {
     const href = link.getAttribute('href');
-    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+    if (!href) return;
+    
+    const linkSegment = href.split('/').pop() || 'index.html';
+    const linkPage = linkSegment.replace(/\.html$/, '') || 'index';
+
+    if (currentPage === linkPage) {
       link.classList.add('active');
+    } else {
+      link.classList.remove('active');
     }
   });
 })();

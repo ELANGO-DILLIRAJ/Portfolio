@@ -603,6 +603,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .cert-preview-card {
+  display: block;
+  color: inherit;
   background: var(--bg-card);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -613,6 +615,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .cert-preview-card:hover {
+  color: inherit;
   border-color: var(--accent-cyan);
   transform: translateY(-6px);
   box-shadow: var(--shadow-glow-cyan);

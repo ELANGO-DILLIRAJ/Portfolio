@@ -411,3 +411,33 @@
   });
 })();
 
+
+// ---- Auto-expand and scroll to certificate via hash ----
+(function () {
+  function handleHash() {
+    const hash = window.location.hash;
+    if (hash && hash.startsWith('#cert-')) {
+      const targetCard = document.querySelector(hash);
+      if (targetCard && targetCard.classList.contains('cert-expand-card')) {
+        // Expand target card (collapsing others first if accordion)
+        const certCards = document.querySelectorAll('.cert-expand-card');
+        certCards.forEach(other => {
+          if (other !== targetCard) {
+            other.classList.remove('expanded');
+          }
+        });
+        targetCard.classList.add('expanded');
+        // Scroll to it after a slight delay for layout adjustments
+        setTimeout(() => {
+          targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 300);
+      }
+    }
+  }
+
+  // Handle load
+  window.addEventListener('load', handleHash);
+  // Handle hash change if user clicks while on the same page
+  window.addEventListener('hashchange', handleHash);
+})();
+

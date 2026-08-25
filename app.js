@@ -10,9 +10,9 @@
 
   let particles = [];
   let mouse = { x: null, y: null };
-  const PARTICLE_COUNT = 90;
-  const CONNECTION_DIST = 140;
-  const MOUSE_RADIUS = 180;
+  const PARTICLE_COUNT = 55;
+  const CONNECTION_DIST = 135;
+  const MOUSE_RADIUS = 160;
 
   function resize() {
     canvas.width = window.innerWidth;
@@ -23,9 +23,9 @@
     constructor() {
       this.x = Math.random() * canvas.width;
       this.y = Math.random() * canvas.height;
-      this.vx = (Math.random() - 0.5) * 0.6;
-      this.vy = (Math.random() - 0.5) * 0.6;
-      this.radius = Math.random() * 1.8 + 0.5;
+      this.vx = (Math.random() - 0.5) * 0.28;
+      this.vy = (Math.random() - 0.5) * 0.28;
+      this.radius = Math.random() * 1.6 + 0.5;
     }
 
     update() {
@@ -42,8 +42,8 @@
         const dist = Math.sqrt(dx * dx + dy * dy);
         if (dist < MOUSE_RADIUS) {
           const force = (MOUSE_RADIUS - dist) / MOUSE_RADIUS;
-          this.x += (dx / dist) * force * 1.5;
-          this.y += (dy / dist) * force * 1.5;
+          this.x += (dx / dist) * force * 0.7;
+          this.y += (dy / dist) * force * 0.7;
         }
       }
     }
@@ -51,7 +51,7 @@
     draw() {
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(0, 242, 254, 0.5)';
+      ctx.fillStyle = 'rgba(0, 242, 254, 0.28)';
       ctx.fill();
     }
   }
@@ -74,7 +74,7 @@
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(0, 242, 254, ${opacity * 0.15})`;
+          ctx.strokeStyle = `rgba(0, 242, 254, ${opacity * 0.05})`;
           ctx.lineWidth = 0.6;
           ctx.stroke();
         }
@@ -240,7 +240,7 @@
   navLinks.forEach(link => {
     const href = link.getAttribute('href');
     if (!href) return;
-    
+
     const linkSegment = href.split('/').pop() || 'index.html';
     const linkPage = linkSegment.replace(/\.html$/, '') || 'index';
 
@@ -276,35 +276,35 @@
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData).toString()
     })
-    .then(response => {
-      status.style.display = 'block';
-      status.style.background = '';
-      status.style.color = '';
-      status.style.border = '';
-      status.textContent = `Thank you, ${name}! Your message has been received. I'll get back to you soon.`;
-      status.className = 'form-status success';
+      .then(response => {
+        status.style.display = 'block';
+        status.style.background = '';
+        status.style.color = '';
+        status.style.border = '';
+        status.textContent = `Thank you, ${name}! Your message has been received. I'll get back to you soon.`;
+        status.className = 'form-status success';
 
-      form.reset();
+        form.reset();
 
-      setTimeout(() => {
+        setTimeout(() => {
+          status.className = 'form-status';
+          status.style.display = 'none';
+        }, 5000);
+      })
+      .catch(error => {
+        console.error('Form submission error:', error);
+        status.style.display = 'block';
+        status.textContent = `Oops! There was a problem submitting your message. Please try again.`;
         status.className = 'form-status';
-        status.style.display = 'none';
-      }, 5000);
-    })
-    .catch(error => {
-      console.error('Form submission error:', error);
-      status.style.display = 'block';
-      status.textContent = `Oops! There was a problem submitting your message. Please try again.`;
-      status.className = 'form-status';
-      status.style.background = 'rgba(255, 82, 82, 0.1)';
-      status.style.color = '#ff5252';
-      status.style.border = '1px solid rgba(255, 82, 82, 0.2)';
+        status.style.background = 'rgba(255, 82, 82, 0.1)';
+        status.style.color = '#ff5252';
+        status.style.border = '1px solid rgba(255, 82, 82, 0.2)';
 
-      setTimeout(() => {
-        status.className = 'form-status';
-        status.style.display = 'none';
-      }, 5000);
-    });
+        setTimeout(() => {
+          status.className = 'form-status';
+          status.style.display = 'none';
+        }, 5000);
+      });
   });
 })();
 

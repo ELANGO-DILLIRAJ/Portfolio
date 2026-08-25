@@ -108,7 +108,7 @@ npx serve .
 B.Tech — Artificial Intelligence & Data Science
 J.N.N Institute of Engineering, Chennai
 
-- 📧 [n.d.elango2007@gmail.com](mailto:n.d.elango2007@gmail.com)
+- 📧 [ndelango07@gmail.com](mailto:ndelango07@gmail.com)
 - 🔗 [LinkedIn](https://www.linkedin.com/in/elangodilliraj)
 
 ---

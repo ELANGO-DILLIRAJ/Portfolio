@@ -309,135 +309,63 @@
 })();
 
 
-// ---- Certification Card Expand/Collapse ----
+// ---- Certificate Floating Details Window (Modal) ----
 (function () {
-  const certCards = document.querySelectorAll('.cert-expand-card[data-expandable]');
-  if (certCards.length === 0) return;
+  const modal = document.getElementById('cert-modal');
+  if (!modal) return;
+  const modalBody = modal.querySelector('.cert-modal-body');
+  const closeBtn = modal.querySelector('.cert-modal-close');
 
-  certCards.forEach(card => {
-    const header = card.querySelector('.cert-expand-header');
-    if (!header) return;
-
-    header.addEventListener('click', (e) => {
-      // Don't toggle if clicking the lightbox trigger image inside expanded body
-      if (e.target.closest('.cert-expand-body')) return;
-
-      // Close other cards (accordion behavior)
-      certCards.forEach(other => {
-        if (other !== card && other.classList.contains('expanded')) {
-          other.classList.remove('expanded');
-        }
-      });
-
-      card.classList.toggle('expanded');
-    });
-  });
-})();
-
-
-// ---- Certificate Lightbox (Fullscreen View) ----
-(function () {
-  const lightbox = document.getElementById('cert-lightbox');
-  const lightboxImg = document.getElementById('cert-lightbox-img');
-  const lightboxClose = document.getElementById('cert-lightbox-close');
-  if (!lightbox || !lightboxImg) return;
-
-  // Open lightbox when clicking expanded cert images
+  // Open floating window modal when clicking any certificate card
   document.addEventListener('click', (e) => {
-    const trigger = e.target.closest('.cert-lightbox-trigger');
-    if (!trigger) return;
+    const card = e.target.closest('.cert-card');
+    if (!card) return;
 
-    e.preventDefault();
-    e.stopPropagation();
-
-    lightboxImg.src = trigger.src;
-    lightboxImg.alt = trigger.alt;
-    lightbox.classList.add('active');
-    document.body.style.overflow = 'hidden';
+    const modalContent = card.querySelector('.cert-card-modal-content');
+    if (modalContent && modalBody) {
+      modalBody.innerHTML = modalContent.innerHTML;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
   });
 
-  // Close lightbox
-  function closeLightbox() {
-    lightbox.classList.remove('active');
+  function closeModal() {
+    modal.classList.remove('active');
     document.body.style.overflow = '';
-    // Clear src after transition
-    setTimeout(() => {
-      if (!lightbox.classList.contains('active')) {
-        lightboxImg.src = '';
-      }
-    }, 400);
   }
 
-  if (lightboxClose) {
-    lightboxClose.addEventListener('click', (e) => {
+  if (closeBtn) {
+    closeBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      closeLightbox();
+      closeModal();
     });
   }
 
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox || e.target === lightboxImg) {
-      closeLightbox();
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeModal();
     }
   });
 
-  // Close on Escape key
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-      closeLightbox();
-    }
-  });
-})();
-
-
-// ---- Scroll to Top Button ----
-(function () {
-  const scrollTopBtn = document.getElementById('scroll-top');
-  if (!scrollTopBtn) return;
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-      scrollTopBtn.classList.add('show');
-    } else {
-      scrollTopBtn.classList.remove('show');
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal();
     }
   });
 
-  scrollTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  });
-})();
-
-
-// ---- Auto-expand and scroll to certificate via hash ----
-(function () {
+  // Handle direct hash navigation e.g. #cert-1
   function handleHash() {
     const hash = window.location.hash;
     if (hash && hash.startsWith('#cert-')) {
       const targetCard = document.querySelector(hash);
-      if (targetCard && targetCard.classList.contains('cert-expand-card')) {
-        // Expand target card (collapsing others first if accordion)
-        const certCards = document.querySelectorAll('.cert-expand-card');
-        certCards.forEach(other => {
-          if (other !== targetCard) {
-            other.classList.remove('expanded');
-          }
-        });
-        targetCard.classList.add('expanded');
-        // Scroll to it after a slight delay for layout adjustments
-        setTimeout(() => {
-          targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }, 300);
+      if (targetCard && targetCard.classList.contains('cert-card')) {
+        targetCard.click();
       }
     }
   }
 
-  // Handle load
   window.addEventListener('load', handleHash);
-  // Handle hash change if user clicks while on the same page
   window.addEventListener('hashchange', handleHash);
 })();
+
 

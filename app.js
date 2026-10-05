@@ -353,10 +353,10 @@
     }
   });
 
-  // Handle direct hash navigation e.g. #cert-1
+  // Handle direct hash navigation e.g. #cert-1 or #badge-1
   function handleHash() {
     const hash = window.location.hash;
-    if (hash && hash.startsWith('#cert-')) {
+    if (hash && (hash.startsWith('#cert-') || hash.startsWith('#badge-'))) {
       const targetCard = document.querySelector(hash);
       if (targetCard && targetCard.classList.contains('cert-card')) {
         targetCard.click();

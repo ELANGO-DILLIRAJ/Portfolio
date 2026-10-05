@@ -110,6 +110,7 @@ J.N.N Institute of Engineering, Chennai
 
 - 📧 [ndelango07@gmail.com](mailto:ndelango07@gmail.com)
 - 🔗 [LinkedIn](https://www.linkedin.com/in/elangodilliraj)
+- 🎖️ [Credly](https://www.credly.com/users/elangodilliraj)
 
 ---
 

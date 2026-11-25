@@ -237,19 +237,28 @@
   const currentPage = pathSegment.replace(/\.html$/, '') || 'index';
   const navLinks = document.querySelectorAll('.nav-links a');
 
-  navLinks.forEach(link => {
-    const href = link.getAttribute('href');
-    if (!href) return;
+  function updateActiveNav() {
+    const hash = window.location.hash;
+    const isCertHash = currentPage === 'certifications-projects' &&
+      (hash === '#certificates' || hash.startsWith('#cert-') || hash.startsWith('#badge-'));
 
-    const linkSegment = href.split('/').pop() || 'index.html';
-    const linkPage = linkSegment.replace(/\.html$/, '') || 'index';
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (!href) return;
 
-    if (currentPage === linkPage) {
-      link.classList.add('active');
-    } else {
-      link.classList.remove('active');
-    }
-  });
+      const [hrefPath, hrefHash = ''] = href.split('#');
+      const linkSegment = hrefPath.split('/').pop() || 'index.html';
+      const linkPage = linkSegment.replace(/\.html$/, '') || 'index';
+
+      const isMatch = currentPage === linkPage &&
+        (hrefHash === 'certificates' ? isCertHash : !isCertHash);
+
+      link.classList.toggle('active', isMatch);
+    });
+  }
+
+  updateActiveNav();
+  window.addEventListener('hashchange', updateActiveNav);
 })();
 
 

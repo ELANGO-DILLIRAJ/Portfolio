@@ -161,13 +161,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-links a {
-  padding: 0.5rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 0.9rem;
   font-size: 0.88rem;
   font-weight: 500;
   color: var(--text-secondary);
   border-radius: var(--radius-sm);
   transition: all var(--transition-fast);
   position: relative;
+  white-space: nowrap;
 }
 
 .nav-links a:hover,
@@ -2085,16 +2088,33 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.nav-links i {
+.nav-links i,
+.nav-links .nav-cert-logo {
   margin-right: 6px;
   font-size: 0.95rem;
   color: var(--accent-cyan);
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links .nav-cert-logo {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
 }
 
 .nav-links a:hover i,
-.nav-links a.active i {
+.nav-links a.active i,
+.nav-links a:hover .nav-cert-logo,
+.nav-links a.active .nav-cert-logo {
   color: var(--accent-violet);
+}
+
+.nav-links a:hover .nav-cert-logo {
+  transform: scale(1.1);
+}
+
+.section[id] {
+  scroll-margin-top: 76px;
 }
 
 /* ============================

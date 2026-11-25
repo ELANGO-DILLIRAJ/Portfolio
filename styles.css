@@ -1543,11 +1543,14 @@ h1, h2, h3, h4, h5, h6 {
    ============================ */
 .interests-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
 }
 
 .interest-card {
+  --card-accent: 0, 242, 254;
+  --mouse-x: 50%;
+  --mouse-y: 50%;
   background: var(--bg-card);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -1555,9 +1558,27 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: var(--radius-lg);
   padding: 2.5rem 2rem;
   text-align: center;
-  transition: all var(--transition-base);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.35s ease,
+              box-shadow 0.35s ease,
+              background 0.35s ease;
   position: relative;
   overflow: hidden;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.interest-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(var(--card-accent), 0.95), transparent);
+  transform: translateX(-50%);
+  transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 2;
 }
 
 .interest-card::after {
@@ -1565,22 +1586,52 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   inset: 0;
   border-radius: var(--radius-lg);
+  background: radial-gradient(
+    280px circle at var(--mouse-x) var(--mouse-y),
+    rgba(var(--card-accent), 0.14),
+    rgba(var(--card-accent), 0.04) 45%,
+    transparent 75%
+  );
   opacity: 0;
-  transition: opacity var(--transition-base);
+  transition: opacity 0.35s ease;
+  pointer-events: none;
 }
 
-.interest-card:nth-child(1)::after { background: linear-gradient(135deg, rgba(0, 242, 254, 0.06), transparent); }
-.interest-card:nth-child(2)::after { background: linear-gradient(135deg, rgba(127, 0, 255, 0.06), transparent); }
-.interest-card:nth-child(3)::after { background: linear-gradient(135deg, rgba(0, 230, 118, 0.06), transparent); }
-.interest-card:nth-child(4)::after { background: linear-gradient(135deg, rgba(225, 0, 255, 0.06), transparent); }
-.interest-card:nth-child(5)::after { background: linear-gradient(135deg, rgba(79, 172, 254, 0.06), transparent); }
-.interest-card:nth-child(6)::after { background: linear-gradient(135deg, rgba(255, 183, 77, 0.06), transparent); }
-.interest-card:nth-child(7)::after { background: linear-gradient(135deg, rgba(255, 82, 82, 0.06), transparent); }
+.interest-card:nth-child(1) { --card-accent: 0, 242, 254; }
+.interest-card:nth-child(2) { --card-accent: 127, 0, 255; }
+.interest-card:nth-child(3) { --card-accent: 168, 85, 247; }
+.interest-card:nth-child(4) { --card-accent: 0, 230, 118; }
+.interest-card:nth-child(5) { --card-accent: 225, 0, 255; }
+.interest-card:nth-child(6) { --card-accent: 79, 172, 254; }
+.interest-card:nth-child(7) { --card-accent: 255, 183, 77; }
+.interest-card:nth-child(8) { --card-accent: 255, 82, 82; }
+.interest-card:nth-child(9) { --card-accent: 0, 242, 254; }
 
-.interest-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--border-glass-hover);
-  box-shadow: var(--shadow-card);
+.interests-grid .interest-card.reveal.visible {
+  transition: opacity 0.6s ease,
+              transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.35s ease,
+              box-shadow 0.35s ease,
+              background 0.35s ease;
+}
+
+.interests-grid .interest-card.is-tilting {
+  transition: opacity 0.6s ease,
+              transform 0.12s ease-out,
+              border-color 0.35s ease,
+              box-shadow 0.35s ease,
+              background 0.35s ease;
+}
+
+.interests-grid .interest-card:hover {
+  transform: translateY(-8px);
+  background: var(--bg-card-hover);
+  border-color: rgba(var(--card-accent), 0.45);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.45), 0 0 24px rgba(var(--card-accent), 0.18);
+}
+
+.interest-card:hover::before {
+  width: 75%;
 }
 
 .interest-card:hover::after {
@@ -1588,17 +1639,93 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .interest-icon {
-  width: 64px;
-  height: 64px;
-  margin: 0 auto 1.2rem;
+  width: 74px;
+  height: 74px;
+  margin: 0 auto 1.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.8rem;
   border-radius: var(--radius-md);
+  background: radial-gradient(circle at 30% 25%, rgba(var(--card-accent), 0.18), rgba(15, 23, 42, 0.78) 75%);
+  border: 1px solid rgba(var(--card-accent), 0.22);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 6px 18px rgba(0, 0, 0, 0.3);
   position: relative;
   z-index: 1;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.35s ease,
+              border-color 0.35s ease,
+              background 0.35s ease;
 }
+
+.interest-svg {
+  width: 48px;
+  height: 48px;
+  display: block;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.45));
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.interest-card:hover .interest-icon {
+  transform: translateY(-4px) scale(1.08);
+  border-color: rgba(var(--card-accent), 0.6);
+  background: radial-gradient(circle at 30% 25%, rgba(var(--card-accent), 0.28), rgba(15, 23, 42, 0.85) 75%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16), 0 0 24px rgba(var(--card-accent), 0.28);
+}
+
+.interest-card:hover .interest-svg {
+  filter: drop-shadow(0 6px 14px rgba(var(--card-accent), 0.35));
+}
+
+.interest-svg .svg-float,
+.interest-svg .svg-tilt,
+.interest-svg .svg-pulse,
+.interest-svg .svg-beam,
+.interest-svg .svg-spin {
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.35s ease;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.interest-svg .svg-spin-origin {
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.interest-card:hover .svg-float {
+  transform: translateY(-2.5px);
+}
+
+.interest-card:hover .svg-tilt {
+  transform: translate(-1.5px, 1.5px) rotate(-6deg);
+}
+
+.interest-card:hover .svg-pulse {
+  transform: scale(1.1);
+}
+
+.interest-card:hover .svg-spin,
+.interest-card:hover .svg-spin-origin {
+  transform: rotate(45deg);
+}
+
+.interest-card:hover .svg-beam {
+  opacity: 1;
+  transform: scaleX(1.15);
+}
+
+@keyframes eqBounce {
+  0%, 100% { transform: scaleY(0.7); }
+  50% { transform: scaleY(1.18); }
+}
+
+.interest-svg .svg-eq {
+  transform-box: fill-box;
+  transform-origin: bottom center;
+}
+
+.interest-card:hover .svg-eq-1 { animation: eqBounce 0.65s ease-in-out infinite; }
+.interest-card:hover .svg-eq-2 { animation: eqBounce 0.55s ease-in-out 0.12s infinite; }
+.interest-card:hover .svg-eq-3 { animation: eqBounce 0.7s ease-in-out 0.24s infinite; }
+.interest-card:hover .svg-eq-4 { animation: eqBounce 0.6s ease-in-out 0.18s infinite; }
 
 .interest-card h3 {
   font-size: 1.1rem;
@@ -1606,6 +1733,12 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.5rem;
   position: relative;
   z-index: 1;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.interest-card:hover h3 {
+  color: rgb(var(--card-accent));
+  transform: translateY(-1px);
 }
 
 .interest-card p {
@@ -1614,6 +1747,24 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.7;
   position: relative;
   z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.interest-card:hover p {
+  color: var(--text-primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .interest-card,
+  .interest-card::before,
+  .interest-card::after,
+  .interest-icon,
+  .interest-svg,
+  .interest-svg *,
+  .interest-card h3 {
+    transition: none;
+    animation: none;
+  }
 }
 
 /* ============================

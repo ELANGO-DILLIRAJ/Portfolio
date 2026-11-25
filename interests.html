@@ -39,51 +39,391 @@
       <div class="interests-grid">
 
         <div class="interest-card reveal">
-          <div class="interest-icon" style="background: rgba(0, 242, 254, 0.1);">🧠</div>
+          <div class="interest-icon">
+            <svg class="interest-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="cl-cover" x1="8" y1="22" x2="56" y2="54" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#0ea5e9"/>
+                  <stop offset="100%" stop-color="#0369a1"/>
+                </linearGradient>
+                <linearGradient id="cl-page-l" x1="11" y1="22" x2="32" y2="48" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#f8fafc"/>
+                  <stop offset="100%" stop-color="#cbd5e1"/>
+                </linearGradient>
+                <linearGradient id="cl-page-r" x1="32" y1="22" x2="53" y2="48" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#e2e8f0"/>
+                  <stop offset="100%" stop-color="#f8fafc"/>
+                </linearGradient>
+                <radialGradient id="cl-spark" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#67e8f9"/>
+                  <stop offset="55%" stop-color="#00f2fe" stop-opacity="0.7"/>
+                  <stop offset="100%" stop-color="#00f2fe" stop-opacity="0"/>
+                </radialGradient>
+              </defs>
+              <!-- Book hardcover & shadow -->
+              <path d="M8 26C8 24.3 9.3 23 11 23H53C54.7 23 56 24.3 56 26V49C56 50.7 54.7 52 53 52H36.5C34.5 52 33 53.5 32 54.5C31 53.5 29.5 52 27.5 52H11C9.3 52 8 50.7 8 49V26Z" fill="url(#cl-cover)" stroke="#38bdf8" stroke-opacity="0.5" stroke-width="1"/>
+              <!-- Left & right curved pages -->
+              <path d="M11 22C18.5 20.5 26.5 22 32 25.5V50C26.5 47 18.5 46 11 47.5V22Z" fill="url(#cl-page-l)"/>
+              <path d="M53 22C45.5 20.5 37.5 22 32 25.5V50C37.5 47 45.5 46 53 47.5V22Z" fill="url(#cl-page-r)"/>
+              <!-- Page crease & subtle text lines -->
+              <line x1="32" y1="25.5" x2="32" y2="50" stroke="#94a3b8" stroke-width="1"/>
+              <path d="M15 28.5C19.5 27.8 24 28.3 28 29.8M15 33.5C19.5 32.8 24 33.3 28 34.8M15 38.5C19.5 37.8 24 38.3 28 39.8" stroke="#64748b" stroke-width="1.3" stroke-linecap="round" opacity="0.65"/>
+              <path d="M49 28.5C44.5 27.8 40 28.3 36 29.8M49 33.5C44.5 32.8 40 33.3 36 34.8M49 38.5C44.5 37.8 40 38.3 36 39.8" stroke="#64748b" stroke-width="1.3" stroke-linecap="round" opacity="0.65"/>
+              <!-- Bookmark ribbon -->
+              <path d="M41 22V39L43.5 37L46 39V22" fill="#00f2fe" opacity="0.9"/>
+              <!-- Floating glowing knowledge core -->
+              <g class="svg-float">
+                <circle cx="32" cy="14" r="9" fill="url(#cl-spark)"/>
+                <ellipse cx="32" cy="14" rx="11" ry="4" transform="rotate(-22 32 14)" stroke="#67e8f9" stroke-width="1.2" stroke-opacity="0.85"/>
+                <ellipse cx="32" cy="14" rx="11" ry="4" transform="rotate(22 32 14)" stroke="#38bdf8" stroke-width="1.2" stroke-opacity="0.7"/>
+                <circle cx="32" cy="14" r="3.2" fill="#e0f2fe" stroke="#00f2fe" stroke-width="1"/>
+              </g>
+            </svg>
+          </div>
           <h3>Continuous Learning</h3>
           <p>Always curious, always growing. I actively pursue new courses, tools, and technologies to stay ahead. From GenAI certifications to math foundations — learning never stops.</p>
         </div>
 
         <div class="interest-card reveal">
-          <div class="interest-icon" style="background: rgba(127, 0, 255, 0.1);">🤖</div>
+          <div class="interest-icon">
+            <svg class="interest-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="ai-chip" x1="16" y1="16" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#1e1b4b"/>
+                  <stop offset="50%" stop-color="#312e81"/>
+                  <stop offset="100%" stop-color="#0f172a"/>
+                </linearGradient>
+                <linearGradient id="ai-rim" x1="14" y1="14" x2="50" y2="50" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#c084fc"/>
+                  <stop offset="50%" stop-color="#7f00ff"/>
+                  <stop offset="100%" stop-color="#00f2fe"/>
+                </linearGradient>
+                <radialGradient id="ai-core" cx="45%" cy="40%" r="55%">
+                  <stop offset="0%" stop-color="#f5d0fe"/>
+                  <stop offset="45%" stop-color="#a855f7"/>
+                  <stop offset="100%" stop-color="#4c1d95"/>
+                </radialGradient>
+              </defs>
+              <!-- Gold/metallic processor pins -->
+              <g stroke="#a78bfa" stroke-width="2" stroke-linecap="round" opacity="0.85">
+                <line x1="22" y1="8" x2="22" y2="14"/><line x1="28.5" y1="8" x2="28.5" y2="14"/><line x1="35.5" y1="8" x2="35.5" y2="14"/><line x1="42" y1="8" x2="42" y2="14"/>
+                <line x1="22" y1="50" x2="22" y2="56"/><line x1="28.5" y1="50" x2="28.5" y2="56"/><line x1="35.5" y1="50" x2="35.5" y2="56"/><line x1="42" y1="50" x2="42" y2="56"/>
+                <line x1="8" y1="22" x2="14" y2="22"/><line x1="8" y1="28.5" x2="14" y2="28.5"/><line x1="8" y1="35.5" x2="14" y2="35.5"/><line x1="8" y1="42" x2="14" y2="42"/>
+                <line x1="50" y1="22" x2="56" y2="22"/><line x1="50" y1="28.5" x2="56" y2="28.5"/><line x1="50" y1="35.5" x2="56" y2="35.5"/><line x1="50" y1="42" x2="56" y2="42"/>
+              </g>
+              <!-- Chip chassis -->
+              <rect x="14" y="14" width="36" height="36" rx="8" fill="url(#ai-chip)" stroke="url(#ai-rim)" stroke-width="1.8"/>
+              <rect x="18" y="18" width="28" height="28" rx="5" stroke="#8b5cf6" stroke-opacity="0.35" stroke-width="1"/>
+              <!-- Neural circuit traces -->
+              <path d="M18 24H23L26 27M46 24H41L38 27M18 40H23L26 37M46 40H41L38 37" stroke="#c084fc" stroke-width="1.2" stroke-opacity="0.7" stroke-linecap="round"/>
+              <!-- Rotating neural aperture ring + luminous iris -->
+              <g class="svg-spin">
+                <circle cx="32" cy="32" r="10.5" stroke="#c084fc" stroke-width="1.5" stroke-dasharray="6 4"/>
+              </g>
+              <g class="svg-pulse">
+                <circle cx="32" cy="32" r="6.8" fill="url(#ai-core)" stroke="#e9d5ff" stroke-width="1"/>
+                <circle cx="30" cy="30" r="1.8" fill="#ffffff" opacity="0.85"/>
+              </g>
+            </svg>
+          </div>
           <h3>AI Tools Exploration</h3>
           <p>Fascinated by the rapid evolution of AI. I experiment with new platforms, compare model capabilities, and find creative ways to integrate AI into everyday workflows.</p>
         </div>
 
         <div class="interest-card reveal">
-          <div class="interest-icon" style="background: rgba(127, 0, 255, 0.1);">✍️</div>
+          <div class="interest-icon">
+            <svg class="interest-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="sw-paper" x1="12" y1="10" x2="44" y2="54" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#f8fafc"/>
+                  <stop offset="100%" stop-color="#cbd5e1"/>
+                </linearGradient>
+                <linearGradient id="sw-nib" x1="34" y1="22" x2="54" y2="48" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#fde68a"/>
+                  <stop offset="50%" stop-color="#f59e0b"/>
+                  <stop offset="100%" stop-color="#b45309"/>
+                </linearGradient>
+                <linearGradient id="sw-barrel" x1="42" y1="10" x2="58" y2="26" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#a855f7"/>
+                  <stop offset="100%" stop-color="#581c87"/>
+                </linearGradient>
+              </defs>
+              <!-- Screenplay manuscript sheet -->
+              <path d="M13 13C13 11.3 14.3 10 16 10H38L46 18V51C46 52.7 44.7 54 43 54H16C14.3 54 13 52.7 13 51V13Z" fill="url(#sw-paper)"/>
+              <path d="M38 10V16C38 17.1 38.9 18 40 18H46L38 10Z" fill="#94a3b8"/>
+              <!-- Film strip / screenplay header accent -->
+              <rect x="17" y="15" width="16" height="3.5" rx="1" fill="#7e22ce" opacity="0.85"/>
+              <line x1="18" y1="24" x2="36" y2="24" stroke="#64748b" stroke-width="1.6" stroke-linecap="round"/>
+              <line x1="21" y1="30" x2="39" y2="30" stroke="#64748b" stroke-width="1.6" stroke-linecap="round" opacity="0.8"/>
+              <line x1="18" y1="36" x2="33" y2="36" stroke="#64748b" stroke-width="1.6" stroke-linecap="round" opacity="0.8"/>
+              <line x1="21" y1="42" x2="34" y2="42" stroke="#64748b" stroke-width="1.6" stroke-linecap="round" opacity="0.65"/>
+              <!-- Written ink flourish -->
+              <path d="M18 48C22 46 25 50 30 47.5" stroke="#a855f7" stroke-width="1.8" stroke-linecap="round"/>
+              <!-- Realistic angled fountain pen & gold nib -->
+              <g class="svg-tilt">
+                <path d="M49 11L55 17L44 28L38 22L49 11Z" fill="url(#sw-barrel)" stroke="#e9d5ff" stroke-opacity="0.5" stroke-width="1"/>
+                <path d="M38 22L44 28L41 39L30 46L34 33L38 22Z" fill="url(#sw-nib)" stroke="#fef3c7" stroke-width="0.9"/>
+                <line x1="30" y1="46" x2="37.5" y2="34.5" stroke="#451a03" stroke-width="1.2" stroke-linecap="round"/>
+                <circle cx="38" cy="34" r="1.5" fill="#451a03"/>
+              </g>
+            </svg>
+          </div>
           <h3>Story & Screenplay Writing</h3>
           <p>Crafting compelling narratives and screenplays, leveraging Google Gemini to push creative boundaries and refine advanced prompt-based storytelling techniques.</p>
         </div>
 
         <div class="interest-card reveal">
-          <div class="interest-icon" style="background: rgba(0, 230, 118, 0.1);">💪</div>
+          <div class="interest-icon">
+            <svg class="interest-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="fw-bar" x1="18" y1="28" x2="46" y2="36" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#94a3b8"/>
+                  <stop offset="50%" stop-color="#f8fafc"/>
+                  <stop offset="100%" stop-color="#64748b"/>
+                </linearGradient>
+                <linearGradient id="fw-plate" x1="10" y1="16" x2="22" y2="48" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#334155"/>
+                  <stop offset="50%" stop-color="#1e293b"/>
+                  <stop offset="100%" stop-color="#0f172a"/>
+                </linearGradient>
+                <linearGradient id="fw-glow" x1="8" y1="32" x2="56" y2="32" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#00e676"/>
+                  <stop offset="100%" stop-color="#00f2fe"/>
+                </linearGradient>
+              </defs>
+              <!-- Subtle pulse vitality line -->
+              <path d="M6 48H18L22 41L27 52L32 39L36 48H58" stroke="#00e676" stroke-width="1.5" stroke-opacity="0.45" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Realistic 3D metallic dumbbell -->
+              <g class="svg-float">
+                <!-- Chrome knurled center grip -->
+                <rect x="20" y="29" width="24" height="6" rx="2" fill="url(#fw-bar)"/>
+                <path d="M26 29V35M29 29V35M32 29V35M35 29V35M38 29V35" stroke="#475569" stroke-width="0.9" opacity="0.6"/>
+                <!-- Outer end caps -->
+                <rect x="6" y="27" width="4" height="10" rx="1.5" fill="#94a3b8"/>
+                <rect x="54" y="27" width="4" height="10" rx="1.5" fill="#94a3b8"/>
+                <!-- Outer weight plates -->
+                <rect x="9" y="19" width="5.5" height="26" rx="2.5" fill="url(#fw-plate)" stroke="url(#fw-glow)" stroke-width="1.4"/>
+                <rect x="49.5" y="19" width="5.5" height="26" rx="2.5" fill="url(#fw-plate)" stroke="url(#fw-glow)" stroke-width="1.4"/>
+                <!-- Inner heavier weight plates -->
+                <rect x="14.5" y="15" width="6.5" height="34" rx="3" fill="url(#fw-plate)" stroke="#00e676" stroke-width="1.6"/>
+                <rect x="43" y="15" width="6.5" height="34" rx="3" fill="url(#fw-plate)" stroke="#00e676" stroke-width="1.6"/>
+                <!-- Specular bevel highlights -->
+                <line x1="16.5" y1="18" x2="16.5" y2="27" stroke="#6ee7b7" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
+                <line x1="45" y1="18" x2="45" y2="27" stroke="#6ee7b7" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
+              </g>
+            </svg>
+          </div>
           <h3>Fitness & Workouts</h3>
           <p>Physical fitness is non-negotiable. Regular exercise routines keep my mind sharp and body energized — building discipline that translates directly into academic performance.</p>
         </div>
 
         <div class="interest-card reveal">
-          <div class="interest-icon" style="background: rgba(225, 0, 255, 0.1);">🏍️</div>
+          <div class="interest-icon">
+            <svg class="interest-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="br-tank" x1="20" y1="20" x2="42" y2="34" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#f0abfc"/>
+                  <stop offset="50%" stop-color="#e100ff"/>
+                  <stop offset="100%" stop-color="#7e22ce"/>
+                </linearGradient>
+                <linearGradient id="br-tire" x1="10" y1="30" x2="54" y2="52" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#334155"/>
+                  <stop offset="100%" stop-color="#0f172a"/>
+                </linearGradient>
+                <linearGradient id="br-beam" x1="48" y1="24" x2="62" y2="34" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#f5d0fe" stop-opacity="0.9"/>
+                  <stop offset="100%" stop-color="#e100ff" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <!-- Asphalt road & speed lines -->
+              <line x1="6" y1="50" x2="58" y2="50" stroke="#64748b" stroke-width="2" stroke-linecap="round"/>
+              <path d="M10 54H20M27 54H37M44 54H54" stroke="#e100ff" stroke-width="1.5" stroke-opacity="0.55" stroke-linecap="round"/>
+              <!-- LED Headlight beam -->
+              <polygon class="svg-beam" points="48,26 62,21 62,34 48,29" fill="url(#br-beam)"/>
+              <!-- Rear & front alloy wheels -->
+              <g class="svg-spin-origin" style="transform-origin: 17px 41px;">
+                <circle cx="17" cy="41" r="8.5" fill="url(#br-tire)" stroke="#94a3b8" stroke-width="1.5"/>
+                <circle cx="17" cy="41" r="4.5" stroke="#e879f9" stroke-width="1.2"/>
+                <path d="M17 36.5V45.5M12.5 41H21.5" stroke="#cbd5e1" stroke-width="1"/>
+              </g>
+              <g class="svg-spin-origin" style="transform-origin: 47px 41px;">
+                <circle cx="47" cy="41" r="8.5" fill="url(#br-tire)" stroke="#94a3b8" stroke-width="1.5"/>
+                <circle cx="47" cy="41" r="4.5" stroke="#e879f9" stroke-width="1.2"/>
+                <path d="M47 36.5V45.5M42.5 41H51.5" stroke="#cbd5e1" stroke-width="1"/>
+              </g>
+              <!-- Exhaust & engine block -->
+              <path d="M16 40L29 37L34 31" stroke="#cbd5e1" stroke-width="2.4" stroke-linecap="round"/>
+              <rect x="27" y="31" width="9" height="8" rx="2" fill="#475569" stroke="#94a3b8" stroke-width="1"/>
+              <!-- Front fork & handlebars -->
+              <path d="M47 41L39 20L34 18" stroke="#e2e8f0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Sculpted sport tank, tail & windscreen -->
+              <path d="M12 28L23 29C25 24 31 21 38 22L44 26L38 31H24L15 32L12 28Z" fill="url(#br-tank)" stroke="#f5d0fe" stroke-opacity="0.55" stroke-width="1"/>
+              <path d="M40 21L46 17" stroke="#67e8f9" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/>
+              <circle cx="47.5" cy="27.5" r="2.2" fill="#fdf4ff"/>
+            </svg>
+          </div>
           <h3>Bike Riding</h3>
           <p>Nothing clears the mind like an open road. Bike riding is my go-to for adventure, exploration, and decompressing after intense study sessions.</p>
         </div>
 
         <div class="interest-card reveal">
-          <div class="interest-icon" style="background: rgba(79, 172, 254, 0.1);">🎵</div>
+          <div class="interest-icon">
+            <svg class="interest-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="mu-band" x1="12" y1="12" x2="52" y2="34" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#94a3b8"/>
+                  <stop offset="50%" stop-color="#e2e8f0"/>
+                  <stop offset="100%" stop-color="#475569"/>
+                </linearGradient>
+                <linearGradient id="mu-cup" x1="10" y1="30" x2="22" y2="50" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#1e293b"/>
+                  <stop offset="100%" stop-color="#0f172a"/>
+                </linearGradient>
+                <linearGradient id="mu-wave" x1="25" y1="28" x2="39" y2="48" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#00f2fe"/>
+                  <stop offset="100%" stop-color="#4facfe"/>
+                </linearGradient>
+              </defs>
+              <!-- Padded studio headband -->
+              <path d="M13 36V31C13 20.5 21.5 12 32 12C42.5 12 51 20.5 51 31V36" stroke="url(#mu-band)" stroke-width="4" stroke-linecap="round"/>
+              <path d="M21 15.5C24.3 13.5 28 12.4 32 12.4C36 12.4 39.7 13.5 43 15.5" stroke="#4facfe" stroke-width="5.2" stroke-linecap="round"/>
+              <!-- Left & right cushioned earcups -->
+              <rect x="9" y="31" width="9" height="19" rx="4.5" fill="url(#mu-cup)" stroke="#4facfe" stroke-width="1.5"/>
+              <rect x="17" y="33" width="3" height="15" rx="1.5" fill="#334155"/>
+              <rect x="46" y="31" width="9" height="19" rx="4.5" fill="url(#mu-cup)" stroke="#4facfe" stroke-width="1.5"/>
+              <rect x="44" y="33" width="3" height="15" rx="1.5" fill="#334155"/>
+              <!-- Earcup metallic accent rings -->
+              <circle cx="13.5" cy="40.5" r="2.2" fill="#38bdf8" opacity="0.8"/>
+              <circle cx="50.5" cy="40.5" r="2.2" fill="#38bdf8" opacity="0.8"/>
+              <!-- Live acoustic equalizer bars -->
+              <g stroke="url(#mu-wave)" stroke-width="2.6" stroke-linecap="round">
+                <line class="svg-eq svg-eq-1" x1="24" y1="36" x2="24" y2="44"/>
+                <line class="svg-eq svg-eq-2" x1="29.3" y1="30" x2="29.3" y2="46"/>
+                <line class="svg-eq svg-eq-3" x1="34.7" y1="27" x2="34.7" y2="47"/>
+                <line class="svg-eq svg-eq-4" x1="40" y1="34" x2="40" y2="44"/>
+              </g>
+            </svg>
+          </div>
           <h3>Music — Listening & Playing</h3>
           <p>Music is therapy and creativity combined. Whether listening to curated playlists or playing instruments, music helps me recharge and think differently about problems.</p>
         </div>
 
         <div class="interest-card reveal">
-          <div class="interest-icon" style="background: rgba(255, 183, 77, 0.1);">📸</div>
+          <div class="interest-icon">
+            <svg class="interest-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="ph-body" x1="8" y1="18" x2="56" y2="50" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#334155"/>
+                  <stop offset="50%" stop-color="#1e293b"/>
+                  <stop offset="100%" stop-color="#0f172a"/>
+                </linearGradient>
+                <radialGradient id="ph-glass" cx="38%" cy="35%" r="60%">
+                  <stop offset="0%" stop-color="#fef3c7" stop-opacity="0.9"/>
+                  <stop offset="30%" stop-color="#f59e0b" stop-opacity="0.65"/>
+                  <stop offset="70%" stop-color="#1e1b4b"/>
+                  <stop offset="100%" stop-color="#020617"/>
+                </radialGradient>
+              </defs>
+              <!-- Shutter button & mode dial -->
+              <rect x="13" y="15" width="7" height="3.5" rx="1" fill="#fbbf24"/>
+              <rect x="44" y="16" width="6" height="2.5" rx="1" fill="#94a3b8"/>
+              <!-- Viewfinder prism hump -->
+              <path d="M22 19L25.5 13H38.5L42 19H22Z" fill="#1e293b" stroke="#64748b" stroke-width="1.2" stroke-linejoin="round"/>
+              <!-- DSLR / Mirrorless camera body -->
+              <rect x="8" y="19" width="48" height="31" rx="6" fill="url(#ph-body)" stroke="#fbbf24" stroke-opacity="0.45" stroke-width="1.4"/>
+              <!-- Grip texture & flash/AF assist dot -->
+              <rect x="11" y="23" width="5" height="23" rx="2" fill="#0f172a" opacity="0.65"/>
+              <circle cx="49" cy="25" r="2" fill="#fde68a"/>
+              <!-- Multi-element camera lens barrel -->
+              <circle cx="32" cy="34.5" r="12.5" fill="#0f172a" stroke="#94a3b8" stroke-width="2"/>
+              <circle cx="32" cy="34.5" r="9.8" fill="url(#ph-glass)" stroke="#fbbf24" stroke-opacity="0.7" stroke-width="1.2"/>
+              <!-- Aperture blades -->
+              <g class="svg-spin" style="transform-origin: 32px 34.5px;" stroke="#fde68a" stroke-opacity="0.55" stroke-width="1">
+                <polygon points="32,27.5 38,31 38,38 32,41.5 26,38 26,31" fill="none"/>
+                <circle cx="32" cy="34.5" r="3.5" fill="#020617" stroke="#f59e0b" stroke-width="1"/>
+              </g>
+              <!-- Optical glass specular reflection -->
+              <ellipse cx="28.5" cy="30.5" rx="2.4" ry="1.3" transform="rotate(-30 28.5 30.5)" fill="#ffffff" opacity="0.85"/>
+            </svg>
+          </div>
           <h3>Photography</h3>
           <p>Capturing moments and perspectives through the lens. Photography trains my eye for detail, composition, and aesthetics — skills that subtly improve my design sense in tech projects.</p>
         </div>
 
         <div class="interest-card reveal">
-          <div class="interest-icon" style="background: rgba(255, 82, 82, 0.1);">🔄</div>
+          <div class="interest-icon">
+            <svg class="interest-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="si-bar1" x1="14" y1="38" x2="22" y2="52" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#f87171"/>
+                  <stop offset="100%" stop-color="#991b1b"/>
+                </linearGradient>
+                <linearGradient id="si-bar2" x1="27" y1="30" x2="35" y2="52" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#fb7185"/>
+                  <stop offset="100%" stop-color="#be123c"/>
+                </linearGradient>
+                <linearGradient id="si-bar3" x1="40" y1="20" x2="48" y2="52" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#fca5a5"/>
+                  <stop offset="100%" stop-color="#ef4444"/>
+                </linearGradient>
+              </defs>
+              <!-- Precision dial arc -->
+              <path d="M12 30A22 22 0 0 1 52 24" stroke="#fca5a5" stroke-opacity="0.3" stroke-width="1.5" stroke-dasharray="3 3" stroke-linecap="round"/>
+              <!-- Ascending milestone steps -->
+              <rect x="14" y="39" width="9" height="13" rx="2.5" fill="url(#si-bar1)" stroke="#fca5a5" stroke-opacity="0.4" stroke-width="1"/>
+              <rect x="27.5" y="31" width="9" height="21" rx="2.5" fill="url(#si-bar2)" stroke="#fca5a5" stroke-opacity="0.5" stroke-width="1"/>
+              <rect x="41" y="22" width="9" height="30" rx="2.5" fill="url(#si-bar3)" stroke="#fecaca" stroke-opacity="0.65" stroke-width="1"/>
+              <!-- Upward trajectory arrow & summit spark -->
+              <g class="svg-float">
+                <path d="M14 31L29 22L36 25L50 12" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M43 12H50V19" stroke="#fca5a5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="50" cy="12" r="2.5" fill="#ff5252" stroke="#ffffff" stroke-width="1"/>
+              </g>
+            </svg>
+          </div>
           <h3>Self-Improvement</h3>
           <p>Constantly updating myself — from reading about productivity systems to refining daily habits. I believe that the best version of tomorrow starts with small improvements today.</p>
+        </div>
+
+        <div class="interest-card reveal">
+          <div class="interest-icon">
+            <svg class="interest-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <radialGradient id="nw-hub" cx="35%" cy="35%" r="65%">
+                  <stop offset="0%" stop-color="#e0f2fe"/>
+                  <stop offset="45%" stop-color="#00f2fe"/>
+                  <stop offset="100%" stop-color="#0284c7"/>
+                </radialGradient>
+                <radialGradient id="nw-node" cx="35%" cy="35%" r="65%">
+                  <stop offset="0%" stop-color="#f8fafc"/>
+                  <stop offset="60%" stop-color="#38bdf8"/>
+                  <stop offset="100%" stop-color="#0369a1"/>
+                </radialGradient>
+              </defs>
+              <!-- Outer orbital link ring -->
+              <circle class="svg-spin" style="transform-origin: 32px 32px;" cx="32" cy="32" r="20" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1.2" stroke-dasharray="4 4"/>
+              <!-- Fiber-optic mesh connections -->
+              <g stroke="#00f2fe" stroke-opacity="0.65" stroke-width="1.6" stroke-linecap="round">
+                <line x1="32" y1="32" x2="32" y2="12"/>
+                <line x1="32" y1="32" x2="50" y2="23"/>
+                <line x1="32" y1="32" x2="46" y2="47"/>
+                <line x1="32" y1="32" x2="18" y2="47"/>
+                <line x1="32" y1="32" x2="14" y2="23"/>
+                <path d="M32 12L50 23L46 47L18 47L14 23Z" stroke-opacity="0.28" stroke-width="1.1"/>
+              </g>
+              <!-- Surrounding peer nodes with 3D spherical shading -->
+              <circle class="svg-pulse" cx="32" cy="12" r="4.5" fill="url(#nw-node)" stroke="#bae6fd" stroke-width="1"/>
+              <circle class="svg-pulse" cx="50" cy="23" r="4.5" fill="url(#nw-node)" stroke="#bae6fd" stroke-width="1"/>
+              <circle class="svg-pulse" cx="46" cy="47" r="4.5" fill="url(#nw-node)" stroke="#bae6fd" stroke-width="1"/>
+              <circle class="svg-pulse" cx="18" cy="47" r="4.5" fill="url(#nw-node)" stroke="#bae6fd" stroke-width="1"/>
+              <circle class="svg-pulse" cx="14" cy="23" r="4.5" fill="url(#nw-node)" stroke="#bae6fd" stroke-width="1"/>
+              <!-- Central illuminated hub node -->
+              <circle cx="32" cy="32" r="7.5" fill="url(#nw-hub)" stroke="#ffffff" stroke-opacity="0.85" stroke-width="1.2"/>
+              <circle cx="29.8" cy="29.8" r="1.8" fill="#ffffff" opacity="0.85"/>
+            </svg>
+          </div>
+          <h3>Networking</h3>
+          <p>Connecting with fellow builders, mentors, and tech communities. I love exchanging ideas, learning from diverse perspectives, and building meaningful relationships that spark collaboration.</p>
         </div>
 
       </div>

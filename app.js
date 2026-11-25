@@ -369,3 +369,35 @@
 })();
 
 
+// ---- Interest Cards Interactive Spotlight & 3D Tilt ----
+(function () {
+  const cards = document.querySelectorAll('.interest-card');
+  if (cards.length === 0) return;
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+
+      if (!prefersReducedMotion) {
+        card.classList.add('is-tilting');
+        const rotateY = ((x / rect.width) - 0.5) * 10;
+        const rotateX = (0.5 - (y / rect.height)) * 10;
+        card.style.transform = `perspective(800px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-8px)`;
+      }
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.classList.remove('is-tilting');
+      card.style.transform = '';
+    });
+  });
+})();
+
+

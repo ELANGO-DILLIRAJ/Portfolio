@@ -134,42 +134,41 @@
           <div class="interest-icon">
             <svg class="interest-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <defs>
-                <linearGradient id="sw-paper" x1="12" y1="10" x2="44" y2="54" gradientUnits="userSpaceOnUse">
+                <radialGradient id="nw-hub" cx="35%" cy="35%" r="65%">
+                  <stop offset="0%" stop-color="#e0f2fe"/>
+                  <stop offset="45%" stop-color="#00f2fe"/>
+                  <stop offset="100%" stop-color="#0284c7"/>
+                </radialGradient>
+                <radialGradient id="nw-node" cx="35%" cy="35%" r="65%">
                   <stop offset="0%" stop-color="#f8fafc"/>
-                  <stop offset="100%" stop-color="#cbd5e1"/>
-                </linearGradient>
-                <linearGradient id="sw-nib" x1="34" y1="22" x2="54" y2="48" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stop-color="#fde68a"/>
-                  <stop offset="50%" stop-color="#f59e0b"/>
-                  <stop offset="100%" stop-color="#b45309"/>
-                </linearGradient>
-                <linearGradient id="sw-barrel" x1="42" y1="10" x2="58" y2="26" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stop-color="#a855f7"/>
-                  <stop offset="100%" stop-color="#581c87"/>
-                </linearGradient>
+                  <stop offset="60%" stop-color="#38bdf8"/>
+                  <stop offset="100%" stop-color="#0369a1"/>
+                </radialGradient>
               </defs>
-              <!-- Screenplay manuscript sheet -->
-              <path d="M13 13C13 11.3 14.3 10 16 10H38L46 18V51C46 52.7 44.7 54 43 54H16C14.3 54 13 52.7 13 51V13Z" fill="url(#sw-paper)"/>
-              <path d="M38 10V16C38 17.1 38.9 18 40 18H46L38 10Z" fill="#94a3b8"/>
-              <!-- Film strip / screenplay header accent -->
-              <rect x="17" y="15" width="16" height="3.5" rx="1" fill="#7e22ce" opacity="0.85"/>
-              <line x1="18" y1="24" x2="36" y2="24" stroke="#64748b" stroke-width="1.6" stroke-linecap="round"/>
-              <line x1="21" y1="30" x2="39" y2="30" stroke="#64748b" stroke-width="1.6" stroke-linecap="round" opacity="0.8"/>
-              <line x1="18" y1="36" x2="33" y2="36" stroke="#64748b" stroke-width="1.6" stroke-linecap="round" opacity="0.8"/>
-              <line x1="21" y1="42" x2="34" y2="42" stroke="#64748b" stroke-width="1.6" stroke-linecap="round" opacity="0.65"/>
-              <!-- Written ink flourish -->
-              <path d="M18 48C22 46 25 50 30 47.5" stroke="#a855f7" stroke-width="1.8" stroke-linecap="round"/>
-              <!-- Realistic angled fountain pen & gold nib -->
-              <g class="svg-tilt">
-                <path d="M49 11L55 17L44 28L38 22L49 11Z" fill="url(#sw-barrel)" stroke="#e9d5ff" stroke-opacity="0.5" stroke-width="1"/>
-                <path d="M38 22L44 28L41 39L30 46L34 33L38 22Z" fill="url(#sw-nib)" stroke="#fef3c7" stroke-width="0.9"/>
-                <line x1="30" y1="46" x2="37.5" y2="34.5" stroke="#451a03" stroke-width="1.2" stroke-linecap="round"/>
-                <circle cx="38" cy="34" r="1.5" fill="#451a03"/>
+              <!-- Outer orbital link ring -->
+              <circle class="svg-spin" style="transform-origin: 32px 32px;" cx="32" cy="32" r="20" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1.2" stroke-dasharray="4 4"/>
+              <!-- Fiber-optic mesh connections -->
+              <g stroke="#00f2fe" stroke-opacity="0.65" stroke-width="1.6" stroke-linecap="round">
+                <line x1="32" y1="32" x2="32" y2="12"/>
+                <line x1="32" y1="32" x2="50" y2="23"/>
+                <line x1="32" y1="32" x2="46" y2="47"/>
+                <line x1="32" y1="32" x2="18" y2="47"/>
+                <line x1="32" y1="32" x2="14" y2="23"/>
+                <path d="M32 12L50 23L46 47L18 47L14 23Z" stroke-opacity="0.28" stroke-width="1.1"/>
               </g>
+              <!-- Surrounding peer nodes with 3D spherical shading -->
+              <circle class="svg-pulse" cx="32" cy="12" r="4.5" fill="url(#nw-node)" stroke="#bae6fd" stroke-width="1"/>
+              <circle class="svg-pulse" cx="50" cy="23" r="4.5" fill="url(#nw-node)" stroke="#bae6fd" stroke-width="1"/>
+              <circle class="svg-pulse" cx="46" cy="47" r="4.5" fill="url(#nw-node)" stroke="#bae6fd" stroke-width="1"/>
+              <circle class="svg-pulse" cx="18" cy="47" r="4.5" fill="url(#nw-node)" stroke="#bae6fd" stroke-width="1"/>
+              <circle class="svg-pulse" cx="14" cy="23" r="4.5" fill="url(#nw-node)" stroke="#bae6fd" stroke-width="1"/>
+              <!-- Central illuminated hub node -->
+              <circle cx="32" cy="32" r="7.5" fill="url(#nw-hub)" stroke="#ffffff" stroke-opacity="0.85" stroke-width="1.2"/>
+              <circle cx="29.8" cy="29.8" r="1.8" fill="#ffffff" opacity="0.85"/>
             </svg>
           </div>
-          <h3>Story & Screenplay Writing</h3>
-          <p>Crafting compelling narratives and screenplays, leveraging Google Gemini to push creative boundaries and refine advanced prompt-based storytelling techniques.</p>
+          <h3>Networking</h3>
+          <p>Connecting with fellow builders, mentors, and tech communities. I love exchanging ideas, learning from diverse perspectives, and building meaningful relationships that spark collaboration.</p>
         </div>
 
         <div class="interest-card reveal">
@@ -221,49 +220,35 @@
           <div class="interest-icon">
             <svg class="interest-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <defs>
-                <linearGradient id="br-tank" x1="20" y1="20" x2="42" y2="34" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stop-color="#f0abfc"/>
-                  <stop offset="50%" stop-color="#e100ff"/>
-                  <stop offset="100%" stop-color="#7e22ce"/>
+                <linearGradient id="si-bar1" x1="14" y1="38" x2="22" y2="52" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#f87171"/>
+                  <stop offset="100%" stop-color="#991b1b"/>
                 </linearGradient>
-                <linearGradient id="br-tire" x1="10" y1="30" x2="54" y2="52" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stop-color="#334155"/>
-                  <stop offset="100%" stop-color="#0f172a"/>
+                <linearGradient id="si-bar2" x1="27" y1="30" x2="35" y2="52" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#fb7185"/>
+                  <stop offset="100%" stop-color="#be123c"/>
                 </linearGradient>
-                <linearGradient id="br-beam" x1="48" y1="24" x2="62" y2="34" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stop-color="#f5d0fe" stop-opacity="0.9"/>
-                  <stop offset="100%" stop-color="#e100ff" stop-opacity="0"/>
+                <linearGradient id="si-bar3" x1="40" y1="20" x2="48" y2="52" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#fca5a5"/>
+                  <stop offset="100%" stop-color="#ef4444"/>
                 </linearGradient>
               </defs>
-              <!-- Asphalt road & speed lines -->
-              <line x1="6" y1="50" x2="58" y2="50" stroke="#64748b" stroke-width="2" stroke-linecap="round"/>
-              <path d="M10 54H20M27 54H37M44 54H54" stroke="#e100ff" stroke-width="1.5" stroke-opacity="0.55" stroke-linecap="round"/>
-              <!-- LED Headlight beam -->
-              <polygon class="svg-beam" points="48,26 62,21 62,34 48,29" fill="url(#br-beam)"/>
-              <!-- Rear & front alloy wheels -->
-              <g class="svg-spin-origin" style="transform-origin: 17px 41px;">
-                <circle cx="17" cy="41" r="8.5" fill="url(#br-tire)" stroke="#94a3b8" stroke-width="1.5"/>
-                <circle cx="17" cy="41" r="4.5" stroke="#e879f9" stroke-width="1.2"/>
-                <path d="M17 36.5V45.5M12.5 41H21.5" stroke="#cbd5e1" stroke-width="1"/>
+              <!-- Precision dial arc -->
+              <path d="M12 30A22 22 0 0 1 52 24" stroke="#fca5a5" stroke-opacity="0.3" stroke-width="1.5" stroke-dasharray="3 3" stroke-linecap="round"/>
+              <!-- Ascending milestone steps -->
+              <rect x="14" y="39" width="9" height="13" rx="2.5" fill="url(#si-bar1)" stroke="#fca5a5" stroke-opacity="0.4" stroke-width="1"/>
+              <rect x="27.5" y="31" width="9" height="21" rx="2.5" fill="url(#si-bar2)" stroke="#fca5a5" stroke-opacity="0.5" stroke-width="1"/>
+              <rect x="41" y="22" width="9" height="30" rx="2.5" fill="url(#si-bar3)" stroke="#fecaca" stroke-opacity="0.65" stroke-width="1"/>
+              <!-- Upward trajectory arrow & summit spark -->
+              <g class="svg-float">
+                <path d="M14 31L29 22L36 25L50 12" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M43 12H50V19" stroke="#fca5a5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="50" cy="12" r="2.5" fill="#ff5252" stroke="#ffffff" stroke-width="1"/>
               </g>
-              <g class="svg-spin-origin" style="transform-origin: 47px 41px;">
-                <circle cx="47" cy="41" r="8.5" fill="url(#br-tire)" stroke="#94a3b8" stroke-width="1.5"/>
-                <circle cx="47" cy="41" r="4.5" stroke="#e879f9" stroke-width="1.2"/>
-                <path d="M47 36.5V45.5M42.5 41H51.5" stroke="#cbd5e1" stroke-width="1"/>
-              </g>
-              <!-- Exhaust & engine block -->
-              <path d="M16 40L29 37L34 31" stroke="#cbd5e1" stroke-width="2.4" stroke-linecap="round"/>
-              <rect x="27" y="31" width="9" height="8" rx="2" fill="#475569" stroke="#94a3b8" stroke-width="1"/>
-              <!-- Front fork & handlebars -->
-              <path d="M47 41L39 20L34 18" stroke="#e2e8f0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-              <!-- Sculpted sport tank, tail & windscreen -->
-              <path d="M12 28L23 29C25 24 31 21 38 22L44 26L38 31H24L15 32L12 28Z" fill="url(#br-tank)" stroke="#f5d0fe" stroke-opacity="0.55" stroke-width="1"/>
-              <path d="M40 21L46 17" stroke="#67e8f9" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/>
-              <circle cx="47.5" cy="27.5" r="2.2" fill="#fdf4ff"/>
             </svg>
           </div>
-          <h3>Bike Riding</h3>
-          <p>Nothing clears the mind like an open road. Bike riding is my go-to for adventure, exploration, and decompressing after intense study sessions.</p>
+          <h3>Self-Improvement</h3>
+          <p>Constantly updating myself — from reading about productivity systems to refining daily habits. I believe that the best version of tomorrow starts with small improvements today.</p>
         </div>
 
         <div class="interest-card reveal">
@@ -354,76 +339,91 @@
           <div class="interest-icon">
             <svg class="interest-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <defs>
-                <linearGradient id="si-bar1" x1="14" y1="38" x2="22" y2="52" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stop-color="#f87171"/>
-                  <stop offset="100%" stop-color="#991b1b"/>
+                <linearGradient id="br-tank" x1="20" y1="20" x2="42" y2="34" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#f0abfc"/>
+                  <stop offset="50%" stop-color="#e100ff"/>
+                  <stop offset="100%" stop-color="#7e22ce"/>
                 </linearGradient>
-                <linearGradient id="si-bar2" x1="27" y1="30" x2="35" y2="52" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stop-color="#fb7185"/>
-                  <stop offset="100%" stop-color="#be123c"/>
+                <linearGradient id="br-tire" x1="10" y1="30" x2="54" y2="52" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#334155"/>
+                  <stop offset="100%" stop-color="#0f172a"/>
                 </linearGradient>
-                <linearGradient id="si-bar3" x1="40" y1="20" x2="48" y2="52" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stop-color="#fca5a5"/>
-                  <stop offset="100%" stop-color="#ef4444"/>
+                <linearGradient id="br-beam" x1="48" y1="24" x2="62" y2="34" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#f5d0fe" stop-opacity="0.9"/>
+                  <stop offset="100%" stop-color="#e100ff" stop-opacity="0"/>
                 </linearGradient>
               </defs>
-              <!-- Precision dial arc -->
-              <path d="M12 30A22 22 0 0 1 52 24" stroke="#fca5a5" stroke-opacity="0.3" stroke-width="1.5" stroke-dasharray="3 3" stroke-linecap="round"/>
-              <!-- Ascending milestone steps -->
-              <rect x="14" y="39" width="9" height="13" rx="2.5" fill="url(#si-bar1)" stroke="#fca5a5" stroke-opacity="0.4" stroke-width="1"/>
-              <rect x="27.5" y="31" width="9" height="21" rx="2.5" fill="url(#si-bar2)" stroke="#fca5a5" stroke-opacity="0.5" stroke-width="1"/>
-              <rect x="41" y="22" width="9" height="30" rx="2.5" fill="url(#si-bar3)" stroke="#fecaca" stroke-opacity="0.65" stroke-width="1"/>
-              <!-- Upward trajectory arrow & summit spark -->
-              <g class="svg-float">
-                <path d="M14 31L29 22L36 25L50 12" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M43 12H50V19" stroke="#fca5a5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-                <circle cx="50" cy="12" r="2.5" fill="#ff5252" stroke="#ffffff" stroke-width="1"/>
+              <!-- Asphalt road & speed lines -->
+              <line x1="6" y1="50" x2="58" y2="50" stroke="#64748b" stroke-width="2" stroke-linecap="round"/>
+              <path d="M10 54H20M27 54H37M44 54H54" stroke="#e100ff" stroke-width="1.5" stroke-opacity="0.55" stroke-linecap="round"/>
+              <!-- LED Headlight beam -->
+              <polygon class="svg-beam" points="48,26 62,21 62,34 48,29" fill="url(#br-beam)"/>
+              <!-- Rear & front alloy wheels -->
+              <g class="svg-spin-origin" style="transform-origin: 17px 41px;">
+                <circle cx="17" cy="41" r="8.5" fill="url(#br-tire)" stroke="#94a3b8" stroke-width="1.5"/>
+                <circle cx="17" cy="41" r="4.5" stroke="#e879f9" stroke-width="1.2"/>
+                <path d="M17 36.5V45.5M12.5 41H21.5" stroke="#cbd5e1" stroke-width="1"/>
               </g>
+              <g class="svg-spin-origin" style="transform-origin: 47px 41px;">
+                <circle cx="47" cy="41" r="8.5" fill="url(#br-tire)" stroke="#94a3b8" stroke-width="1.5"/>
+                <circle cx="47" cy="41" r="4.5" stroke="#e879f9" stroke-width="1.2"/>
+                <path d="M47 36.5V45.5M42.5 41H51.5" stroke="#cbd5e1" stroke-width="1"/>
+              </g>
+              <!-- Exhaust & engine block -->
+              <path d="M16 40L29 37L34 31" stroke="#cbd5e1" stroke-width="2.4" stroke-linecap="round"/>
+              <rect x="27" y="31" width="9" height="8" rx="2" fill="#475569" stroke="#94a3b8" stroke-width="1"/>
+              <!-- Front fork & handlebars -->
+              <path d="M47 41L39 20L34 18" stroke="#e2e8f0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Sculpted sport tank, tail & windscreen -->
+              <path d="M12 28L23 29C25 24 31 21 38 22L44 26L38 31H24L15 32L12 28Z" fill="url(#br-tank)" stroke="#f5d0fe" stroke-opacity="0.55" stroke-width="1"/>
+              <path d="M40 21L46 17" stroke="#67e8f9" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/>
+              <circle cx="47.5" cy="27.5" r="2.2" fill="#fdf4ff"/>
             </svg>
           </div>
-          <h3>Self-Improvement</h3>
-          <p>Constantly updating myself — from reading about productivity systems to refining daily habits. I believe that the best version of tomorrow starts with small improvements today.</p>
+          <h3>Bike Riding</h3>
+          <p>Nothing clears the mind like an open road. Bike riding is my go-to for adventure, exploration, and decompressing after intense study sessions.</p>
         </div>
 
         <div class="interest-card reveal">
           <div class="interest-icon">
             <svg class="interest-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <defs>
-                <radialGradient id="nw-hub" cx="35%" cy="35%" r="65%">
-                  <stop offset="0%" stop-color="#e0f2fe"/>
-                  <stop offset="45%" stop-color="#00f2fe"/>
-                  <stop offset="100%" stop-color="#0284c7"/>
-                </radialGradient>
-                <radialGradient id="nw-node" cx="35%" cy="35%" r="65%">
+                <linearGradient id="sw-paper" x1="12" y1="10" x2="44" y2="54" gradientUnits="userSpaceOnUse">
                   <stop offset="0%" stop-color="#f8fafc"/>
-                  <stop offset="60%" stop-color="#38bdf8"/>
-                  <stop offset="100%" stop-color="#0369a1"/>
-                </radialGradient>
+                  <stop offset="100%" stop-color="#cbd5e1"/>
+                </linearGradient>
+                <linearGradient id="sw-nib" x1="34" y1="22" x2="54" y2="48" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#fde68a"/>
+                  <stop offset="50%" stop-color="#f59e0b"/>
+                  <stop offset="100%" stop-color="#b45309"/>
+                </linearGradient>
+                <linearGradient id="sw-barrel" x1="42" y1="10" x2="58" y2="26" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#a855f7"/>
+                  <stop offset="100%" stop-color="#581c87"/>
+                </linearGradient>
               </defs>
-              <!-- Outer orbital link ring -->
-              <circle class="svg-spin" style="transform-origin: 32px 32px;" cx="32" cy="32" r="20" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1.2" stroke-dasharray="4 4"/>
-              <!-- Fiber-optic mesh connections -->
-              <g stroke="#00f2fe" stroke-opacity="0.65" stroke-width="1.6" stroke-linecap="round">
-                <line x1="32" y1="32" x2="32" y2="12"/>
-                <line x1="32" y1="32" x2="50" y2="23"/>
-                <line x1="32" y1="32" x2="46" y2="47"/>
-                <line x1="32" y1="32" x2="18" y2="47"/>
-                <line x1="32" y1="32" x2="14" y2="23"/>
-                <path d="M32 12L50 23L46 47L18 47L14 23Z" stroke-opacity="0.28" stroke-width="1.1"/>
+              <!-- Screenplay manuscript sheet -->
+              <path d="M13 13C13 11.3 14.3 10 16 10H38L46 18V51C46 52.7 44.7 54 43 54H16C14.3 54 13 52.7 13 51V13Z" fill="url(#sw-paper)"/>
+              <path d="M38 10V16C38 17.1 38.9 18 40 18H46L38 10Z" fill="#94a3b8"/>
+              <!-- Film strip / screenplay header accent -->
+              <rect x="17" y="15" width="16" height="3.5" rx="1" fill="#7e22ce" opacity="0.85"/>
+              <line x1="18" y1="24" x2="36" y2="24" stroke="#64748b" stroke-width="1.6" stroke-linecap="round"/>
+              <line x1="21" y1="30" x2="39" y2="30" stroke="#64748b" stroke-width="1.6" stroke-linecap="round" opacity="0.8"/>
+              <line x1="18" y1="36" x2="33" y2="36" stroke="#64748b" stroke-width="1.6" stroke-linecap="round" opacity="0.8"/>
+              <line x1="21" y1="42" x2="34" y2="42" stroke="#64748b" stroke-width="1.6" stroke-linecap="round" opacity="0.65"/>
+              <!-- Written ink flourish -->
+              <path d="M18 48C22 46 25 50 30 47.5" stroke="#a855f7" stroke-width="1.8" stroke-linecap="round"/>
+              <!-- Realistic angled fountain pen & gold nib -->
+              <g class="svg-tilt">
+                <path d="M49 11L55 17L44 28L38 22L49 11Z" fill="url(#sw-barrel)" stroke="#e9d5ff" stroke-opacity="0.5" stroke-width="1"/>
+                <path d="M38 22L44 28L41 39L30 46L34 33L38 22Z" fill="url(#sw-nib)" stroke="#fef3c7" stroke-width="0.9"/>
+                <line x1="30" y1="46" x2="37.5" y2="34.5" stroke="#451a03" stroke-width="1.2" stroke-linecap="round"/>
+                <circle cx="38" cy="34" r="1.5" fill="#451a03"/>
               </g>
-              <!-- Surrounding peer nodes with 3D spherical shading -->
-              <circle class="svg-pulse" cx="32" cy="12" r="4.5" fill="url(#nw-node)" stroke="#bae6fd" stroke-width="1"/>
-              <circle class="svg-pulse" cx="50" cy="23" r="4.5" fill="url(#nw-node)" stroke="#bae6fd" stroke-width="1"/>
-              <circle class="svg-pulse" cx="46" cy="47" r="4.5" fill="url(#nw-node)" stroke="#bae6fd" stroke-width="1"/>
-              <circle class="svg-pulse" cx="18" cy="47" r="4.5" fill="url(#nw-node)" stroke="#bae6fd" stroke-width="1"/>
-              <circle class="svg-pulse" cx="14" cy="23" r="4.5" fill="url(#nw-node)" stroke="#bae6fd" stroke-width="1"/>
-              <!-- Central illuminated hub node -->
-              <circle cx="32" cy="32" r="7.5" fill="url(#nw-hub)" stroke="#ffffff" stroke-opacity="0.85" stroke-width="1.2"/>
-              <circle cx="29.8" cy="29.8" r="1.8" fill="#ffffff" opacity="0.85"/>
             </svg>
           </div>
-          <h3>Networking</h3>
-          <p>Connecting with fellow builders, mentors, and tech communities. I love exchanging ideas, learning from diverse perspectives, and building meaningful relationships that spark collaboration.</p>
+          <h3>Story & Screenplay Writing</h3>
+          <p>Crafting compelling narratives and screenplays, leveraging Google Gemini to push creative boundaries and refine advanced prompt-based storytelling techniques.</p>
         </div>
 
       </div>

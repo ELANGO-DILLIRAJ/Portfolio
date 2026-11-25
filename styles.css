@@ -1599,13 +1599,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .interest-card:nth-child(1) { --card-accent: 0, 242, 254; }
 .interest-card:nth-child(2) { --card-accent: 127, 0, 255; }
-.interest-card:nth-child(3) { --card-accent: 168, 85, 247; }
+.interest-card:nth-child(3) { --card-accent: 0, 242, 254; }
 .interest-card:nth-child(4) { --card-accent: 0, 230, 118; }
-.interest-card:nth-child(5) { --card-accent: 225, 0, 255; }
+.interest-card:nth-child(5) { --card-accent: 255, 82, 82; }
 .interest-card:nth-child(6) { --card-accent: 79, 172, 254; }
 .interest-card:nth-child(7) { --card-accent: 255, 183, 77; }
-.interest-card:nth-child(8) { --card-accent: 255, 82, 82; }
-.interest-card:nth-child(9) { --card-accent: 0, 242, 254; }
+.interest-card:nth-child(8) { --card-accent: 225, 0, 255; }
+.interest-card:nth-child(9) { --card-accent: 168, 85, 247; }
 
 .interests-grid .interest-card.reveal.visible {
   transition: opacity 0.6s ease,

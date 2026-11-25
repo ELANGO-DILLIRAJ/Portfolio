@@ -40,7 +40,44 @@
 
         <!-- Team Leadership -->
         <div class="soft-skill-card reveal">
-          <div class="soft-skill-icon">🎯</div>
+          <div class="soft-skill-icon">
+            <svg class="soft-skill-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="tl-ring" x1="10" y1="10" x2="54" y2="54" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#c084fc"/>
+                  <stop offset="50%" stop-color="#7f00ff"/>
+                  <stop offset="100%" stop-color="#00f2fe"/>
+                </linearGradient>
+                <radialGradient id="tl-center" cx="35%" cy="35%" r="65%">
+                  <stop offset="0%" stop-color="#f5d0fe"/>
+                  <stop offset="50%" stop-color="#a855f7"/>
+                  <stop offset="100%" stop-color="#4c1d95"/>
+                </radialGradient>
+                <radialGradient id="tl-peer" cx="35%" cy="35%" r="65%">
+                  <stop offset="0%" stop-color="#f8fafc"/>
+                  <stop offset="65%" stop-color="#a78bfa"/>
+                  <stop offset="100%" stop-color="#3b0764"/>
+                </radialGradient>
+              </defs>
+              <!-- Outer precision leadership compass ring -->
+              <circle class="svg-spin" cx="32" cy="32" r="22" stroke="url(#tl-ring)" stroke-opacity="0.45" stroke-width="1.5" stroke-dasharray="6 4"/>
+              <circle cx="32" cy="32" r="15.5" stroke="#c084fc" stroke-opacity="0.25" stroke-width="1"/>
+              <!-- Alignment connector arcs from leader to team triad -->
+              <path d="M32 24V13M26 36L17 44M38 36L47 44" stroke="#c084fc" stroke-opacity="0.65" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M17 44Q32 51 47 44" stroke="#7f00ff" stroke-opacity="0.45" stroke-width="1.4" stroke-linecap="round"/>
+              <!-- Team member crest nodes -->
+              <g class="svg-float">
+                <circle cx="32" cy="12" r="4" fill="url(#tl-peer)" stroke="#e9d5ff" stroke-width="1"/>
+                <circle cx="16.5" cy="44.5" r="4" fill="url(#tl-peer)" stroke="#e9d5ff" stroke-width="1"/>
+                <circle cx="47.5" cy="44.5" r="4" fill="url(#tl-peer)" stroke="#e9d5ff" stroke-width="1"/>
+              </g>
+              <!-- Central elevated leader emblem with faceted star crest -->
+              <g class="svg-pulse">
+                <circle cx="32" cy="32" r="9.5" fill="url(#tl-center)" stroke="#f3e8ff" stroke-width="1.3"/>
+                <path d="M32 25.5L33.9 29.6L38.4 30.2L35.1 33.3L35.9 37.8L32 35.6L28.1 37.8L28.9 33.3L25.6 30.2L30.1 29.6L32 25.5Z" fill="#ffffff" opacity="0.92"/>
+              </g>
+            </svg>
+          </div>
           <h3>Team Leadership</h3>
           <span class="role-tag">Representative & Pupil Leader</span>
           <p>Proven ability to lead teams, coordinate efforts, and drive outcomes in academic and extracurricular settings.</p>
@@ -53,7 +90,48 @@
 
         <!-- Technical Speaking -->
         <div class="soft-skill-card reveal">
-          <div class="soft-skill-icon">🎤</div>
+          <div class="soft-skill-icon">
+            <svg class="soft-skill-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="ts-mesh" x1="22" y1="10" x2="42" y2="34" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#f8fafc"/>
+                  <stop offset="50%" stop-color="#94a3b8"/>
+                  <stop offset="100%" stop-color="#334155"/>
+                </linearGradient>
+                <linearGradient id="ts-body" x1="24" y1="24" x2="40" y2="42" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#38bdf8"/>
+                  <stop offset="55%" stop-color="#0284c7"/>
+                  <stop offset="100%" stop-color="#0f172a"/>
+                </linearGradient>
+                <linearGradient id="ts-stand" x1="18" y1="36" x2="46" y2="56" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#cbd5e1"/>
+                  <stop offset="100%" stop-color="#475569"/>
+                </linearGradient>
+              </defs>
+              <!-- Radiating digital voice & technical signal arcs -->
+              <g class="svg-wave" stroke="#00f2fe" stroke-linecap="round">
+                <path d="M16 19C13.5 22 13.5 28 16 31" stroke-width="1.6" stroke-opacity="0.75"/>
+                <path d="M11.5 15.5C7.5 20.5 7.5 29.5 11.5 34.5" stroke-width="1.4" stroke-opacity="0.45"/>
+                <path d="M48 19C50.5 22 50.5 28 48 31" stroke-width="1.6" stroke-opacity="0.75"/>
+                <path d="M52.5 15.5C56.5 20.5 56.5 29.5 52.5 34.5" stroke-width="1.4" stroke-opacity="0.45"/>
+              </g>
+              <!-- Studio condenser microphone capsule & yoke -->
+              <g class="svg-float">
+                <rect x="24" y="10" width="16" height="24" rx="8" fill="url(#ts-mesh)" stroke="#e2e8f0" stroke-width="1.2"/>
+                <!-- Acoustic grille slots -->
+                <path d="M27 16H37M26 20H38M27 24H37" stroke="#1e293b" stroke-width="1.3" stroke-linecap="round" opacity="0.6"/>
+                <!-- Collar & lower body -->
+                <rect x="24" y="25" width="16" height="12" rx="5" fill="url(#ts-body)" stroke="#67e8f9" stroke-opacity="0.7" stroke-width="1"/>
+                <line x1="25" y1="25" x2="39" y2="25" stroke="#00f2fe" stroke-width="1.4"/>
+                <!-- Specular highlight -->
+                <line x1="27.5" y1="13" x2="27.5" y2="22" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round" opacity="0.75"/>
+              </g>
+              <!-- U-mount cradle & weighted desk base -->
+              <path d="M19 28V31C19 38.2 24.8 44 32 44C39.2 44 45 38.2 45 31V28" stroke="url(#ts-stand)" stroke-width="2.4" stroke-linecap="round"/>
+              <line x1="32" y1="44" x2="32" y2="52" stroke="url(#ts-stand)" stroke-width="2.6"/>
+              <rect x="21" y="51" width="22" height="4" rx="2" fill="url(#ts-stand)" stroke="#38bdf8" stroke-opacity="0.4" stroke-width="1"/>
+            </svg>
+          </div>
           <h3>Technical Speaking</h3>
           <span class="role-tag">Seminar Presenter</span>
           <p>Ability to distill complex technical concepts into clear, engaging presentations for diverse audiences.</p>
@@ -66,7 +144,41 @@
 
         <!-- Public Speaking -->
         <div class="soft-skill-card reveal">
-          <div class="soft-skill-icon">🌟</div>
+          <div class="soft-skill-icon">
+            <svg class="soft-skill-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="ps-beam" x1="32" y1="8" x2="32" y2="48" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#f5d0fe" stop-opacity="0.55"/>
+                  <stop offset="65%" stop-color="#e100ff" stop-opacity="0.18"/>
+                  <stop offset="100%" stop-color="#e100ff" stop-opacity="0"/>
+                </linearGradient>
+                <linearGradient id="ps-podium" x1="18" y1="36" x2="46" y2="55" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#334155"/>
+                  <stop offset="50%" stop-color="#1e293b"/>
+                  <stop offset="100%" stop-color="#0f172a"/>
+                </linearGradient>
+                <linearGradient id="ps-star" x1="24" y1="12" x2="40" y2="30" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#fef08a"/>
+                  <stop offset="55%" stop-color="#f0abfc"/>
+                  <stop offset="100%" stop-color="#e100ff"/>
+                </linearGradient>
+              </defs>
+              <!-- Stage spotlight cone -->
+              <polygon class="svg-beam" points="25,9 39,9 54,48 10,48" fill="url(#ps-beam)"/>
+              <!-- Stage floor arc -->
+              <ellipse cx="32" cy="53" rx="22" ry="3.5" fill="#1e293b" stroke="#e879f9" stroke-opacity="0.4" stroke-width="1"/>
+              <!-- Sleek speaker podium & gooseneck mic -->
+              <path d="M23 36H41L38.5 52H25.5L23 36Z" fill="url(#ps-podium)" stroke="#e879f9" stroke-opacity="0.55" stroke-width="1.2" stroke-linejoin="round"/>
+              <rect x="20" y="34" width="24" height="3.5" rx="1.5" fill="#475569" stroke="#f0abfc" stroke-opacity="0.55" stroke-width="1"/>
+              <path d="M37 34C37 30 35 29 33 29" stroke="#cbd5e1" stroke-width="1.4" stroke-linecap="round"/>
+              <circle cx="32.5" cy="29" r="1.4" fill="#f0abfc"/>
+              <!-- Floating faceted stage spotlight star -->
+              <g class="svg-float">
+                <path d="M32 10L34.7 16.5L41.8 17.1L36.4 21.8L38 28.7L32 25L26 28.7L27.6 21.8L22.2 17.1L29.3 16.5L32 10Z" fill="url(#ps-star)" stroke="#ffffff" stroke-opacity="0.85" stroke-width="1"/>
+                <circle cx="32" cy="19.5" r="2.2" fill="#ffffff" opacity="0.75"/>
+              </g>
+            </svg>
+          </div>
           <h3>Public Speaking</h3>
           <span class="role-tag">Stage Host & Speaker</span>
           <p>Confident stage presence with experience hosting events, anchoring shows, and captivating live audiences.</p>

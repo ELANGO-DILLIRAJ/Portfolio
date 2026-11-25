@@ -369,9 +369,9 @@
 })();
 
 
-// ---- Interest Cards Interactive Spotlight & 3D Tilt ----
+// ---- Interactive Card Spotlight & 3D Tilt (Interests & Soft Skills) ----
 (function () {
-  const cards = document.querySelectorAll('.interest-card');
+  const cards = document.querySelectorAll('.interest-card, .soft-skill-card');
   if (cards.length === 0) return;
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

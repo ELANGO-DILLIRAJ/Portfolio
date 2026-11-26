@@ -2281,6 +2281,7 @@ h1, h2, h3, h4, h5, h6 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.8rem;
+  counter-reset: cert-grid-num;
 }
 
 @media (max-width: 992px) {
@@ -2313,6 +2314,7 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   cursor: pointer;
   position: relative;
+  counter-increment: cert-grid-num;
   transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
               border-color 0.35s ease,
               box-shadow 0.35s ease,
@@ -2340,6 +2342,33 @@ h1, h2, h3, h4, h5, h6 {
 .cert-card:nth-child(6) { --card-c1: 0, 242, 254; --card-c2: 0, 230, 118; }
 .cert-card:nth-child(7) { --card-c1: 168, 85, 247; --card-c2: 79, 172, 254; }
 .cert-card:nth-child(8) { --card-c1: 79, 172, 254; --card-c2: 225, 0, 255; }
+.cert-card:nth-child(9) { --card-c1: 0, 230, 118; --card-c2: 79, 172, 254; }
+
+.cert-card::after {
+  content: counter(cert-grid-num, decimal-leading-zero);
+  position: absolute;
+  right: 0.9rem;
+  bottom: 0.55rem;
+  font-family: var(--font-heading);
+  font-size: 3.4rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  background: linear-gradient(135deg, rgb(var(--card-c1)), rgb(var(--card-c2)));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0.14;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.cert-3col-grid .cert-card:hover::after {
+  opacity: 0.28;
+  transform: translateY(-2px);
+}
 
 .cert-3col-grid .cert-card.reveal.visible {
   transition: opacity 0.6s ease,
@@ -2406,6 +2435,8 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   flex: 1;
+  position: relative;
+  z-index: 1;
 }
 
 .cert-card-title {

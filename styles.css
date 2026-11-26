@@ -686,6 +686,7 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   gap: 1rem;
   margin-top: 2rem;
+  counter-reset: cert-preview-num;
 }
 
 .cert-preview-card {
@@ -703,6 +704,41 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
   transition: all var(--transition-base);
   text-decoration: none;
+  position: relative;
+  counter-increment: cert-preview-num;
+}
+
+/* Numbering watermark */
+.cert-preview-card::after {
+  content: counter(cert-preview-num, decimal-leading-zero);
+  position: absolute;
+  right: 1.1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-heading);
+  font-size: 4.5rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0.1;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  transition: opacity var(--transition-base);
+}
+
+.cert-preview-card:hover::after {
+  opacity: 0.2;
+}
+
+/* Ensure card children sit above the watermark */
+.cert-preview-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .cert-preview-card:hover {

@@ -410,3 +410,181 @@
 })();
 
 
+
+
+/* ============================================================
+   SEMESTER SUBJECTS MODAL — JS
+   ============================================================ */
+(function () {
+  'use strict';
+
+  /* ---- Subject data ---- */
+  const SEM_DATA = {
+    1: {
+      label:    'Semester 1  ·  Sep 2025 – Dec 2025',
+      title:    'Foundation & Early Achievements',
+      subtitle: '9 subjects across language foundations, engineering basics, and core technology — the building blocks of AI & Data Science.',
+      categories: [
+        {
+          id:    'language',
+          name:  'Language & Communication',
+          brief: 'Courses focused on linguistic ability, cultural expression, and communicative foundations essential for a well-rounded engineer.',
+          icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8l6 6"/><path d="M4 14l6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="M22 22l-5-10-5 10"/><path d="M14 18h6"/></svg>`,
+          subjects: [
+            { code: '25LEB101', name: 'Japanese Language – I' },
+            { code: '25HST101', name: 'Heritage of Tamils' },
+          ],
+        },
+        {
+          id:    'basics',
+          name:  'Engineering Basics',
+          brief: 'Foundational science, mathematics, and life-skill courses that form the academic backbone of an engineering education.',
+          icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10A15.3 15.3 0 0 1 8 12a15.3 15.3 0 0 1 4-10z"/></svg>`,
+          subjects: [
+            { code: '25BSB101', name: 'Physics for Information Science' },
+            { code: '25BST101', name: 'Applied Calculus' },
+            { code: '25EEB101', name: 'Life Skills for Engineers – I' },
+            { code: '25EET101', name: 'Design Thinking' },
+            { code: '25EST101', name: 'Entrepreneurship for Engineers' },
+          ],
+        },
+        {
+          id:    'technology',
+          name:  'Technology & Computing',
+          brief: 'Core computing and AI courses that introduce programming paradigms and the fundamentals of artificial intelligence.',
+          icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>`,
+          subjects: [
+            { code: '25CSB101', name: 'Fundamentals of AI' },
+            { code: '25CSB102', name: 'Programming in C' },
+          ],
+        },
+      ],
+    },
+
+    2: {
+      label:    'Semester 2  ·  Jan 2026 – May 2026',
+      title:    'Expanding Horizons',
+      subtitle: '10 subjects spanning humanities & values, mathematical reasoning, and advanced computing technology — building depth across every dimension.',
+      categories: [
+        {
+          id:    'language',
+          name:  'Language, Values & Humanities',
+          brief: 'Courses nurturing professional communication, cultural identity, and ethical reasoning as a holistic engineer.',
+          icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8l6 6"/><path d="M4 14l6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="M22 22l-5-10-5 10"/><path d="M14 18h6"/></svg>`,
+          subjects: [
+            { code: '25HSB101', name: 'Professional English' },
+            { code: '25HST201', name: 'Tamils and Technology' },
+            { code: '25HST202', name: 'Universal Human Values – II: Understanding Harmony & Ethics' },
+          ],
+        },
+        {
+          id:    'basics',
+          name:  'Engineering Basics',
+          brief: 'Life skills, innovation challenges, and collaborative lab sessions reinforcing the practical side of engineering.',
+          icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10A15.3 15.3 0 0 1 8 12a15.3 15.3 0 0 1 4-10z"/></svg>`,
+          subjects: [
+            { code: '25EEB201', name: 'Life Skills for Engineers – II' },
+            { code: '25EEP201', name: 'Re-Engineering for Innovation' },
+            { code: '25EEP202', name: 'Idea Lab' },
+          ],
+        },
+        {
+          id:    'technology',
+          name:  'Technology & Computing',
+          brief: 'Advanced computing subjects covering mathematics, digital systems, C++ programming, and electronics.',
+          icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>`,
+          subjects: [
+            { code: '25BST201', name: 'Linear Algebra' },
+            { code: '25CSB201', name: 'Programming in C++' },
+            { code: '25CST201', name: 'Digital Principles and Computer Organisation' },
+            { code: '25ECB101', name: 'Basic Electrical and Electronics Engineering' },
+          ],
+        },
+      ],
+    },
+  };
+
+  /* ---- DOM refs ---- */
+  const overlay   = document.getElementById('sem-modal');
+  const closeBtn  = document.getElementById('sem-modal-close');
+  const bodyEl    = document.getElementById('sem-modal-body');
+  const labelEl   = document.getElementById('sem-modal-label');
+  const titleEl   = document.getElementById('sem-modal-title');
+
+  if (!overlay) return;
+
+  /* ---- Build modal content ---- */
+  function buildContent(semNum) {
+    const data = SEM_DATA[semNum];
+    if (!data) return;
+
+    labelEl.textContent = data.label;
+    titleEl.textContent = data.title;
+
+    let html = `<p class="sem-modal-intro">${data.subtitle}</p>
+<div class="sem-cat-tree">`;
+
+    data.categories.forEach((cat) => {
+      html += `
+  <div class="sem-cat-node" data-cat="${cat.id}">
+    <div class="sem-cat-header">
+      <div class="sem-cat-icon-wrap">${cat.icon}</div>
+      <div>
+        <p class="sem-cat-name">${cat.name}</p>
+        <p class="sem-cat-brief">${cat.brief}</p>
+      </div>
+    </div>
+    <ul class="sem-subjects-list">`;
+
+      cat.subjects.forEach((subj) => {
+        html += `
+      <li class="sem-subject-item">
+        <span class="sem-subject-dot"></span>
+        <span class="sem-subject-name">${subj.name}</span>
+        <span class="sem-subject-code">${subj.code}</span>
+      </li>`;
+      });
+
+      html += `
+    </ul>
+  </div>`;
+    });
+
+    html += `\n</div>`;
+    bodyEl.innerHTML = html;
+  }
+
+  /* ---- Open modal ---- */
+  function openModal(semNum) {
+    buildContent(semNum);
+    overlay.removeAttribute('hidden');
+    document.body.style.overflow = 'hidden';
+    overlay.focus();
+    requestAnimationFrame(() => {
+      overlay.scrollTop = 0;
+      bodyEl.scrollTop = 0;
+    });
+  }
+
+  /* ---- Close modal ---- */
+  function closeModal() {
+    overlay.setAttribute('hidden', '');
+    document.body.style.overflow = '';
+    bodyEl.innerHTML = '';
+  }
+
+  /* ---- Event listeners ---- */
+  document.querySelectorAll('.sem-subjects-btn').forEach((btn) => {
+    btn.addEventListener('click', () => openModal(Number(btn.dataset.sem)));
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closeModal();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !overlay.hasAttribute('hidden')) closeModal();
+  });
+})();

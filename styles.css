@@ -2343,6 +2343,7 @@ h1, h2, h3, h4, h5, h6 {
 .cert-card:nth-child(7) { --card-c1: 168, 85, 247; --card-c2: 79, 172, 254; }
 .cert-card:nth-child(8) { --card-c1: 79, 172, 254; --card-c2: 225, 0, 255; }
 .cert-card:nth-child(9) { --card-c1: 0, 230, 118; --card-c2: 79, 172, 254; }
+.cert-card:nth-child(10) { --card-c1: 127, 0, 255; --card-c2: 0, 242, 254; }
 
 .cert-card::after {
   content: counter(cert-grid-num, decimal-leading-zero);

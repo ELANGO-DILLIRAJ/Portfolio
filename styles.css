@@ -1389,6 +1389,7 @@ h1, h2, h3, h4, h5, h6 {
 .project-card:nth-child(3) { --proj-accent-1: 79, 172, 254; --proj-accent-2: 127, 0, 255; }
 .project-card:nth-child(4) { --proj-accent-1: 0, 230, 118; --proj-accent-2: 0, 242, 254; }
 .project-card:nth-child(5) { --proj-accent-1: 225, 0, 255; --proj-accent-2: 0, 242, 254; }
+.project-card:nth-child(6) { --proj-accent-1: 79, 172, 254; --proj-accent-2: 0, 230, 118; }
 
 .projects-grid .project-card.reveal.visible {
   transition: opacity 0.6s ease,
@@ -2344,6 +2345,7 @@ h1, h2, h3, h4, h5, h6 {
 .cert-card:nth-child(8) { --card-c1: 79, 172, 254; --card-c2: 225, 0, 255; }
 .cert-card:nth-child(9) { --card-c1: 0, 230, 118; --card-c2: 79, 172, 254; }
 .cert-card:nth-child(10) { --card-c1: 127, 0, 255; --card-c2: 0, 242, 254; }
+.cert-card:nth-child(11) { --card-c1: 0, 242, 254; --card-c2: 225, 0, 255; }
 
 .cert-card::after {
   content: counter(cert-grid-num, decimal-leading-zero);
